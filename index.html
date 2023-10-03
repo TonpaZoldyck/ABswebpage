@@ -9,6 +9,7 @@
 		<title>My Page/ Portfolio</title>
 
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -16,33 +17,40 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<section id="header">
-				<div class="inner">
-					<span class="icon solid major fa-cloud"></span>
-					<h1>Hi, I'm <strong>Abdel</strong>, an aspiring Data Scientist.<br />
-					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Discover</a></li>
-					</ul>
-				</div>
-			</section>
+		<section id="header">
+			<div class="inner">
+				<span class="icon solid major fa-cloud"></span>
+				<h1>Hi, I'm <strong>Abdel</strong>, an aspiring Data Scientist.</h1>
+				<p>Strong statistical foundation, exceptional data analysis skills, passionate about driving business success through insights.</p>
+				<ul class="actions special">
+					<!-- Add your navigation button here -->
+					<li><a href="#two" class="button">About me</a></li>
+					<li><a href="#one" class="button scrolly">Discover</a></li>
+					<li><a href="#three" class="button">My Projects</a></li>
+				</ul>
+			</div>
+		</section>
+		
 
 		<!-- One -->
-			<section id="one" class="main style1">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>I am a results-driven professional with a financial services background, seeking to apply my skills in data science and analysis. Strong
-									statistical foundation, exceptional data analysis skills, passionate about driving business success through insights.</h2>
-							</header>
-							<p><strong>My Goal:</strong> My ultimate goal is to unravel complex problems and empower organizations with data-driven strategies. I thrive on the challenge of turning raw data into actionable insights, helping businesses make informed decisions, and fostering growth through data-driven solutions.</p>
-							<p><strong>Explore My Work:</strong> Dive into my portfolio to explore a collection of projects that showcase my analytical prowess and passion for data. From predictive algorithms to data-driven storytelling, these projects exemplify my dedication to finding answers within the data.</p>
-						</div>
-						<div class="col-6 col-12-medium imp-medium">
-						</div>
+		<section id="one" class="main style1 full-width">
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium" style="padding-right: 5% !important; padding-left: 5% !important">
+						<header class="major">
+							<h2>I am a results-driven professional with a financial services background, seeking to apply my skills in data science and analysis. Strong
+								statistical foundation, exceptional data analysis skills, passionate about driving business success through insights.</h2>
+						</header>
+						<p><strong>My Goal:</strong> My ultimate goal is to unravel complex problems and empower organizations with data-driven strategies. I thrive on the challenge of turning raw data into actionable insights, helping businesses make informed decisions, and fostering growth through data-driven solutions.</p>
+						<p><strong>Explore My Work:</strong> Dive into my portfolio to explore a collection of projects that showcase my analytical prowess and passion for data. From predictive algorithms to data-driven storytelling, these projects exemplify my dedication to finding answers within the data.</p>
+					</div>
+					<div class="col-6 col-12-medium imp-medium">
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
+		
+		
 
 		<!-- Two -->
 			<section id="two" class="main style2">
@@ -59,38 +67,35 @@
 							</ul>
 							
 							
-							<div class="col-6 col-12-medium">
+							<div class="col-12">
 								<div class="box">
 									<header class="major">
 										<h2>About me</h2>
 									</header>
 									<div class="content">
 										<div class="row">
-											<div class="col-6">
+											<div class="col-6" style="width: 50% !important;">
 												<h3>Work Experience</h3>
 												<p><strong>Deloitte</strong></p>
 												<p>Industry: Private Equity</p>
 												<p><em>Position:</em> Assistant Manager</p>
-												<!-- <p><em>Date:</em> 2020 - 2023</p> -->
 												<!-- Add additional work experience entries here if needed -->
 											</div>
-											<div class="col-6">
+											<ddiv class="col-6" style="width: 50% !important;">
 												<h3>Education</h3>
 												<p><strong>University College London (UCL)</strong></p>
 												<p><em>Major:</em> Management Science (First)</p>
 												<p><em>Minor:</em> Engineering Mathematics (First)</p>
-												<!-- <p>Date: 2017 - 2020</p> -->
 												<!-- Add additional education entries here if needed -->
 											</div>
 										</div>
 										<!-- Skills section spanning both columns -->
-										
-										
-											</div>
-										</div>
-										
 									</div>
 								</div>
+							</div>
+							
+							
+							
 							</div>
 							<!-- To add skills section here -->
 						</div>
@@ -99,15 +104,16 @@
 			</section>
 
 		<!-- Three -->
-			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>My Projects</h2>
-					</header>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
+		<section id="three" class="main style1 special">
+			<div class="container">
+				<header class="major">
+					<h2>My Projects</h2>
+				</header>
+				<div class="row gtr-150">
+					<div class="col-12"> <!-- Use a single column for all screen sizes -->
+						<div class="project-item">
 							<span class="image fit"><img src="images/moviereco.tiff" alt="" /></span>
-							<h3> Project 1 - Movie Recomendation System</h3>
+							<h3> Project 1 - Movie Recommendation System</h3>
 							<p>In this project, I set out to create a personalized movie recommendation system, aiming to enhance the cinematic experiences of movie enthusiasts. Leveraging cutting-edge data science and machine learning techniques, I ventured into the world of recommendation algorithms to deliver tailored movie suggestions.</p>
 							<p>I began by implementing a foundational recommendation model using Singular Value Decomposition (SVD). This method allowed me to establish a benchmark for comparison in later stages of the project.</p>
 							<p>Prior to diving into modeling, I conducted extensive exploratory data analysis (EDA) to comprehend the underlying patterns in the movie dataset. This analysis served as a crucial foundation for the recommendation algorithms.</p>
@@ -117,7 +123,9 @@
 								<li><a href="https://github.com/TonpaZoldyck/Moviematcher" class="button">See More</a></li>
 							</ul>
 						</div>
-						<div class="col-4 col-12-medium">
+					</div>
+					<div class="col-12">
+						<div class="project-item">
 							<span class="image fit"><img src="images/creditcard.jpg" alt="" /></span>
 							<h3>Project 2 - Credit Card Defaults Application</h3>
 							<p>This project involved developing a predictive model to assess the likelihood of credit card holders defaulting on their payments. It aimed to assist financial institutions in identifying high-risk accounts and implementing proactive measures to mitigate default risks.</p>
@@ -130,10 +138,12 @@
 									<li><a href="https://github.com/TonpaZoldyck/CreditCardDefualtsProject" class="button">See More</a></li>
 								</ul>
 						</div>
-						<div class="col-4 col-12-medium">
+					</div>
+					<div class="col-12">
+						<div class="project-item">
 							<span class="image fit"><img src="https://usustatesman.com/wp-content/uploads/2017/01/movie-reviews-design-1050x492.jpg" alt="" /></span>
 							<h3>Project 3 - IMDB Sentiment Analysis</h3>
-							<p><p>In this project, I harnessed the power of Natural Language Processing (NLP) to gain insights from IMDb movie reviews. This endeavor aimed to uncover sentiments within textual data and provide valuable information for decision-making.</p>
+							<p>In this project, I harnessed the power of Natural Language Processing (NLP) to gain insights from IMDb movie reviews. This endeavor aimed to uncover sentiments within textual data and provide valuable information for decision-making.</p>
 							<p>I retrieved extensive movie review data from the IMDb database using Google BigQuery. This involved crafting SQL queries, performing complex joins, and fine-tuning the dataset to ensure it was ready for analysis</p>
 							<p>To gain a comprehensive understanding of the dataset, I employed Looker, a powerful data exploration and visualization tool. This facilitated the creation of informative dashboards that visually represented key trends and patterns.</p>
 							<p>Leveraging Google Colab, I seamlessly integrated the data into a Pandas DataFrame, allowing for further manipulation and analysis. This transition streamlined the process and enhanced data accessibility.</p>
@@ -141,48 +151,54 @@
 							<ul class="actions special">
 								<li><a href="#" class="button">See More</a></li>
 							</ul>
-							<div class="col-4 col-12-medium">
-								<span class="image fit"><img src="images/powerbi.png" alt="" /></span>
-								<h3>Project 4 - Power Bi/ Revenue Sampling</h3>
-								<p>At my current position, I undertook a transformative initiative aimed at optimizing the receivables and revenue testing process for a prominent UK-based property client. This project not only streamlined operations but also significantly enhanced efficiency and accuracy.</p>
-								<p>Traditionally, the receivables and revenue testing process was a highly manual and time-consuming endeavor, typically spanning <strong>5 to 8 days</strong> of laborious work.</p>
-								<p>Leveraging Power BI and Power Query, I embarked on a mission to overhaul this process. I successfully reduced the task duration from several days to just <strong>2 days</strong>, marking a substantial leap in efficiency.</p>
-								<p>Through the creation of a dynamic dashboard and detailed analysis, I implemented a targeted sampling approach, concentrating on high-risk areas. This not only saved time but also improved the precision of the testing process.</p>
-								<p>I meticulously prepared and structured the data, creating a robust data model. Utilizing DAX (Data Analysis Expressions), I designed a dashboard that facilitated efficient sampling through Power Query.The most notable achievement was the establishment of a standardized and repeatable process.</p>
-								<ul class="actions special">
-									<li><button disabled class="button">Client Confidential</button></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-medium">
-								<span class="image fit"><img src="images/what_is_Computer_Vision.jpg.webp" alt="" /></span>
-								<h3>Project 5 - Image Recognition</h3>
-								<p>In this project, I embarked on a journey into the fascinating world of computer vision and image recognition. Leveraging the power of PyTorch, I set out to build a robust image classification model capable of distinguishing between two distinct datasets: the Fashion MNIST dataset and the MNIST dataset.</p>
-								<p>Using PyTorch, I meticulously crafted and trained a series of models. Through rigorous testing and refinement, I achieved an outstanding accuracy rate of <strong>88%</strong>, a testament to the robustness of the chosen model.</p>
-								<p>Using PyTorch, I meticulously crafted and trained a series of models. Through rigorous testing and refinement, I achieved an outstanding accuracy rate of 88%, a testament to the robustness of the chosen model. I implemented efficient data loading techniques, optimizing batch performance to expedite model training and evaluation.</p>
-								<p>eyond model development, I successfully saved and deployed the best-performing model, ensuring its practical applicability. </p>
-								<ul class="actions special">
-									<li><a href="https://github.com/TonpaZoldyck/Computervisionpytorch/blob/main" class="button">See More</a></li>
-								</ul>
-							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+					<div class="col-12">
+						<div class="project-item">
+							<span class="image fit"><img src="images/powerbi.png" alt="" /></span>
+							<h3>Project 4 - Power Bi/ Revenue Sampling</h3>
+							<p>At my current position, I undertook a transformative initiative aimed at optimizing the receivables and revenue testing process for a prominent UK-based property client. This project not only streamlined operations but also significantly enhanced efficiency and accuracy.</p>
+							<p>Traditionally, the receivables and revenue testing process was a highly manual and time-consuming endeavor, typically spanning <strong>5 to 8 days</strong> of laborious work.</p>
+							<p>Leveraging Power BI and Power Query, I embarked on a mission to overhaul this process. I successfully reduced the task duration from several days to just <strong>2 days</strong>, marking a substantial leap in efficiency.</p>
+							<p>Through the creation of a dynamic dashboard and detailed analysis, I implemented a targeted sampling approach, concentrating on high-risk areas. This not only saved time but also improved the precision of the testing process.</p>
+							<p>I meticulously prepared and structured the data, creating a robust data model. Utilizing DAX (Data Analysis Expressions), I designed a dashboard that facilitated efficient sampling through Power Query.The most notable achievement was the establishment of a standardized and repeatable process.</p>
+							<ul class="actions special">
+								<li><button disabled class="button">Client Confidential</button></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="project-item">
+							<span class="image fit"><img src="images/what_is_Computer_Vision.jpg.webp" alt="" /></span>
+							<h3>Project 5 - Image Recognition</h3>
+							<p>In this project, I embarked on a journey into the fascinating world of computer vision and image recognition. Leveraging the power of PyTorch, I set out to build a robust image classification model capable of distinguishing between two distinct datasets: the Fashion MNIST dataset and the MNIST dataset.</p>
+							<p>Using PyTorch, I meticulously crafted and trained a series of models. Through rigorous testing and refinement, I achieved an outstanding accuracy rate of <strong>88%</strong>, a testament to the robustness of the chosen model.</p>
+							<p>Using PyTorch, I meticulously crafted and trained a series of models. Through rigorous testing and refinement, I achieved an outstanding accuracy rate of 88%, a testament to the robustness of the chosen model. I implemented efficient data loading techniques, optimizing batch performance to expedite model training and evaluation.</p>
+							<p>Beyond model development, I successfully saved and deployed the best-performing model, ensuring its practical applicability.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/TonpaZoldyck/Computervisionpytorch/blob/main" class="button">See More</a></li>
+							</ul>
+						</div>
+					</div>
+					</div>
+			</div>
+		</section>
 
 		<!-- Four -->
-			<section id="four" class="main style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Coming Soon</h2>
-					</header>
+		<section id="four" class="main style2 special full-width">
+			<div class="container">
+				<header class="major">
+					<h2>Coming Soon</h2>
+				</header>
+				<div class="coming-soon-content">
 					<p>Developing my own chess engine...</p>
-					<p>Fitbit API health anlytics...</p>
-					<!-- <ul class="actions special">
-						<li><a href="#" class="button wide primary">Sign Up</a></li>
-						<li><a href="#" class="button wide">Learn More</a></li>
-					</ul> -->
+					<p>Fitbit API health analytics...</p>
 				</div>
-			</section>
+			</div>
+		</section>
+
+		
+		
 
 		<!-- Five -->
 		<!--

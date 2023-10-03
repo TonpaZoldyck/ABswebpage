@@ -374,7 +374,9 @@ input, select, textarea {
 		}
 
 		.row > .col-6 {
-			width: 50%;
+			width: 100%;
+			text-align: center;
+
 		}
 
 		.row > .off-6 {
@@ -2818,16 +2820,16 @@ input, select, textarea {
 		padding: 6em 0 4em 0 ;
 	}
 
-		.main.style1 {
-			background: #fff;
-		}
+	.main.style1 {
+		background: #fff; /* Keep the background color if you want */
+	}
 
 		.main.style2 {
 			background-color: #333;
 			color: rgba(255, 255, 255, 0.75);
-			background-attachment: fixed,							fixed;
+			background-attachment: fixed, fixed;
 			background-image: url("images/overlay1.png"), url("../../images/header.jpg");
-			background-size: auto,							cover;
+			background-size: cover, cover; /* Set background size to cover the element */
 		}
 
 			.main.style2 a {
@@ -3516,4 +3518,30 @@ input, select, textarea {
 .skills-heading {
     text-align: center;
     margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.full-width {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.full-width .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Adjust the style of the container within the section */
+#one .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
 }
