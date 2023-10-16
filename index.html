@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>My Page/ Portfolio</title>
@@ -21,7 +16,7 @@
 			<div class="inner">
 				<span class="icon solid major fa-cloud"></span>
 				<h1>Hi, I'm <strong>Abdel</strong>, a Data Scientist.</h1>
-				<p>Strong statistical foundation, exceptional data analysis skills, passionate about driving business success through insights.</p>
+				<p>With a strong statistical foundation, exceptional data analysis skills, passionate about driving business success through insights.</p>
 				<ul class="actions special">
 					<!-- Add your navigation button here -->
 					<li><a href="#two" class="button">About me</a></li>
@@ -38,8 +33,7 @@
 				<div class="row gtr-150">
 					<div class="col-6 col-12-medium" style="padding-right: 5% !important; padding-left: 5% !important">
 						<header class="major">
-							<h2>I am a results-driven professional with a financial services background, seeking to apply my skills in data science and analysis. Strong
-								statistical foundation, exceptional data analysis skills, passionate about driving business success through insights.</h2>
+							<h2>I am a results-driven professional with a financial services background, seeking to apply my skills in data science and analysis.</h2>
 						</header>
 						<p><strong>My Goal:</strong> My ultimate goal is to unravel complex problems and empower organizations with data-driven strategies. I thrive on the challenge of turning raw data into actionable insights, helping businesses make informed decisions, and fostering growth through data-driven solutions.</p>
 						<p><strong>Explore My Work:</strong> Dive into my portfolio to explore a collection of projects that showcase my analytical prowess and passion for data. From predictive algorithms to data-driven storytelling, these projects exemplify my dedication to finding answers within the data.</p>
@@ -110,7 +104,7 @@
 						</div>
 				</div>
 			</section>
-
+			
 		<!-- Three -->
 		<section id="three" class="main style1 special">
 			<div class="container">
@@ -118,76 +112,140 @@
 					<h2>My Projects</h2>
 				</header>
 				<div class="row gtr-150">
+					<div class="col-12">
+						<div class="project-item">
+							<span class="image fit"><img src="https://usustatesman.com/wp-content/uploads/2017/01/movie-reviews-design-1050x492.jpg" alt="" /></span>
+							<h2>Project 1 - IMDb NLP Sentiment Analysis</h2>
+						
+							<!-- Goal -->
+							<p><strong>Goal</strong></p>
+							<p>The goal of this project was to harness the power of Natural Language Processing (NLP) to gain insights from IMDb movie reviews. It aimed to uncover sentiments within textual data and provide valuable information for decision-making.</p>
+						
+							<!-- Methods/Work Done -->
+							<p><strong>Work Done</strong></p>
+							<p>I retrieved extensive movie review data from the IMDb database using Google BigQuery. This involved crafting SQL queries, performing complex joins, and fine-tuning the dataset to ensure it was ready for analysis.</p>
+							<p>To gain a comprehensive understanding of the dataset, I employed Looker, a powerful data exploration and visualization tool. This facilitated the creation of informative dashboards that visually represented key trends and patterns.</p>
+							<p>Leveraging Google Colab, I seamlessly integrated the data into a Pandas DataFrame, allowing for further manipulation and analysis. This transition streamlined the process and enhanced data accessibility.</p>
+							<p>Utilizing NLP libraries, I applied Count Vectorization to the textual content, enabling the classification of reviews as positive or negative sentiment. This step was pivotal in extracting actionable insights from unstructured text data.</p>
+							<p>Additionally, I extended the project by creating a Convolutional Neural Network (CNN) model for sentiment prediction. This model utilized the textual data to make accurate sentiment predictions, enhancing the depth of analysis and predictive capabilities.</p>
+						
+							<!-- Outcome -->
+							<p><strong>Outcome</strong></p>
+							<p>The project showcased my expertise in NLP, data preprocessing, visualization, and machine learning. It allowed for valuable insights to be derived from IMDb movie reviews, which can aid in decision-making processes. The best performing model could classify <strong>87%</strong> of movie reviews accurately.</p>
+						
+							<ul class="actions special">
+								<li><a href="https://github.com/TonpaZoldyck/moviereviewsNLPmodeling" class="button">See More</a></li>
+							</ul>
+						</div>
+						
+						
+						
+					</div>
 					<div class="col-12"> <!-- Use a single column for all screen sizes -->
 						<div class="project-item">
 							<span class="image fit"><img src="images/moviereco.tiff" alt="" /></span>
-							<h3> Project 1 - Movie Recommendation System</h3>
+							<h3>Project 2 - Movie Recommendation System</h3>
+						
+							<!-- Goal -->
+							<p><strong>Goal:</strong></p>
 							<p>In this project, I set out to create a personalized movie recommendation system, aiming to enhance the cinematic experiences of movie enthusiasts. Leveraging cutting-edge data science and machine learning techniques, I ventured into the world of recommendation algorithms to deliver tailored movie suggestions.</p>
+						
+							<!-- Methods/Work Done -->
+							<p><strong>Work Done:</strong></p>
 							<p>I began by implementing a foundational recommendation model using Singular Value Decomposition (SVD). This method allowed me to establish a benchmark for comparison in later stages of the project.</p>
 							<p>Prior to diving into modeling, I conducted extensive exploratory data analysis (EDA) to comprehend the underlying patterns in the movie dataset. This analysis served as a crucial foundation for the recommendation algorithms.</p>
-							<p>In addition to SVD, I implemented machine learning algorithms, including Regression, Support Vector Regression (SVR), and Random Forest, to further refine the recommendation engine. These algorithms added depth and accuracy to the suggestions <strong>improving on the base line loss by 36%</strong></p>
+							<p>In addition to SVD, I implemented machine learning algorithms, including Regression, Support Vector Regression (SVR), and Random Forest, to further refine the recommendation engine. These algorithms added depth and accuracy to the suggestions, improving on the base line loss by 36%.</p>
 							<p>To push the boundaries of recommendation precision, I experimented with PyTorch and neural networks. This innovative approach allowed for more intricate modeling and improved personalization.</p>
+						
+							<!-- Outcome -->
+							<p><strong>Outcome:</strong></p>
+							<p>The project aimed to create a personalized movie recommendation system, enhancing the cinematic experiences of users. The use of various recommendation algorithms and machine learning techniques improved the accuracy of movie suggestions. The project achieved a 36% improvement in loss compared to the baseline model.</p>
+						
 							<ul class="actions special">
 								<li><a href="https://github.com/TonpaZoldyck/Moviematcher" class="button">See More</a></li>
 							</ul>
 						</div>
+						
+						
 					</div>
 					<div class="col-12">
 						<div class="project-item">
 							<span class="image fit"><img src="images/creditcard.jpg" alt="" /></span>
-							<h3>Project 2 - Credit Card Defaults Application</h3>
+							<h3>Project 3 - Credit Card Defaults Application</h3>
+						
+							<!-- Goal -->
+							<p><strong>Goal</strong></p>
 							<p>This project involved developing a predictive model to assess the likelihood of credit card holders defaulting on their payments. It aimed to assist financial institutions in identifying high-risk accounts and implementing proactive measures to mitigate default risks.</p>
+						
+							<!-- Methods/Work Done -->
+							<p><strong>Work Done</strong></p>
 							<p>Accurate default prediction is crucial for financial institutions to minimize potential losses and maintain a healthy portfolio. This project directly addresses the pressing need for risk assessment in the financial sector.</p>
 							<p>Managing and preparing the data for analysis was a critical component of this project. I honed my data wrangling skills and ensured data quality was maintained.</p>
-							<p>Leveraged machine learning models, including Naive Bayes, Logistic Regression, XGBoost, and
-								SVM, with hyperparameter tuning and ensemble methods achieving <strong>impressive results with 82%
-								accuracy and 43% recall.</strong></p>
-								<ul class="actions special">
-									<li><a href="https://github.com/TonpaZoldyck/CreditCardDefualtsProject" class="button">See More</a></li>
-								</ul>
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="project-item">
-							<span class="image fit"><img src="https://usustatesman.com/wp-content/uploads/2017/01/movie-reviews-design-1050x492.jpg" alt="" /></span>
-							<h3>Project 3 - IMDB Sentiment Analysis</h3>
-							<p>In this project, I harnessed the power of Natural Language Processing (NLP) to gain insights from IMDb movie reviews. This endeavor aimed to uncover sentiments within textual data and provide valuable information for decision-making.</p>
-							<p>I retrieved extensive movie review data from the IMDb database using Google BigQuery. This involved crafting SQL queries, performing complex joins, and fine-tuning the dataset to ensure it was ready for analysis</p>
-							<p>To gain a comprehensive understanding of the dataset, I employed Looker, a powerful data exploration and visualization tool. This facilitated the creation of informative dashboards that visually represented key trends and patterns.</p>
-							<p>Leveraging Google Colab, I seamlessly integrated the data into a Pandas DataFrame, allowing for further manipulation and analysis. This transition streamlined the process and enhanced data accessibility.</p>
-							<p>Utilizing NLP libraries, I applied Count Vectorization to the textual content, enabling the classification of reviews as positive or negative sentiment. This step was pivotal in extracting actionable insights from unstructured text data.</p>
+							<p>Leveraged machine learning models, including Naive Bayes, Logistic Regression, XGBoost, and SVM, with hyperparameter tuning and ensemble methods</p>
+						
+							<!-- Outcome -->
+							<p><strong>Outcome</strong></p>
+							<p>The project aimed to develop a predictive model to assess the likelihood of credit card holders defaulting on their payments. The work done involved managing and preparing data for analysis, leveraging machine learning models, and achieving impressive results with <strong> 82% accuracy and 43% recall</strong>. This assists financial institutions in managing risk effectively.</p>
+						
 							<ul class="actions special">
-								<li><a href="#" class="button">See More</a></li>
+								<li><a href="https://github.com/TonpaZoldyck/CreditCardDefualtsProject" class="button">See More</a></li>
 							</ul>
 						</div>
+						
 					</div>
 					<div class="col-12">
 						<div class="project-item">
 							<span class="image fit"><img src="images/powerbi.png" alt="" /></span>
 							<h3>Project 4 - Power Bi/ Revenue Sampling</h3>
+						
+							<!-- Goal -->
+							<p><strong>Goal</strong></p>
 							<p>At my current position, I undertook a transformative initiative aimed at optimizing the receivables and revenue testing process for a prominent UK-based property client. This project not only streamlined operations but also significantly enhanced efficiency and accuracy.</p>
+						
+							<!-- Methods/Work Done -->
+							<p><strong>Work Done</strong></p>
 							<p>Traditionally, the receivables and revenue testing process was a highly manual and time-consuming endeavor, typically spanning <strong>5 to 8 days</strong> of laborious work.</p>
 							<p>Leveraging Power BI and Power Query, I embarked on a mission to overhaul this process. I successfully reduced the task duration from several days to just <strong>2 days</strong>, marking a substantial leap in efficiency.</p>
 							<p>Through the creation of a dynamic dashboard and detailed analysis, I implemented a targeted sampling approach, concentrating on high-risk areas. This not only saved time but also improved the precision of the testing process.</p>
-							<p>I meticulously prepared and structured the data, creating a robust data model. Utilizing DAX (Data Analysis Expressions), I designed a dashboard that facilitated efficient sampling through Power Query.The most notable achievement was the establishment of a standardized and repeatable process.</p>
+							<p>I meticulously prepared and structured the data, creating a robust data model. Utilizing DAX (Data Analysis Expressions), I designed a dashboard that facilitated efficient sampling through Power Query. The most notable achievement was the establishment of a standardized and repeatable process.</p>
+						
+							<!-- Outcome -->
+							<p><strong>Outcome</strong></p>
+							<p>The project aimed to optimize the receivables and revenue testing process for a UK-based property client. This involved leveraging Power BI, Power Query, and DAX to reduce task duration, improve precision, and establish a standardized process. The most significant achievement was the reduction of task duration from several days to just 2 days.</p>
+						
 							<ul class="actions special">
 								<li><button disabled class="button">Client Confidential</button></li>
 							</ul>
 						</div>
+						
 					</div>
 					<div class="col-12">
 						<div class="project-item">
 							<span class="image fit"><img src="images/what_is_Computer_Vision.jpg.webp" alt="" /></span>
 							<h3>Project 5 - Image Recognition</h3>
-							<p>In this project, I embarked on a journey into the fascinating world of computer vision and image recognition. Leveraging the power of PyTorch, I set out to build a robust image classification model capable of distinguishing between two distinct datasets: the Fashion MNIST dataset and the MNIST dataset.</p>
-							<p>Using PyTorch, I meticulously crafted and trained a series of models. Through rigorous testing and refinement, I achieved an outstanding accuracy rate of <strong>88%</strong>, a testament to the robustness of the chosen model.</p>
-							<p>Using PyTorch, I meticulously crafted and trained a series of models. Through rigorous testing and refinement, I achieved an outstanding accuracy rate of 88%, a testament to the robustness of the chosen model. I implemented efficient data loading techniques, optimizing batch performance to expedite model training and evaluation.</p>
-							<p>Beyond model development, I successfully saved and deployed the best-performing model, ensuring its practical applicability.</p>
+					
+							<!-- Goal -->
+							<p><strong>Goal:</strong></p>
+							<p>In this project, the goal was to develop an image classification model using PyTorch to distinguish between the Fashion MNIST and MNIST datasets.</p>
+					
+							<!-- Methods/Work Done -->
+							<p><strong>Work Done:</strong></p>
+							<p>The data was cleaned and prepared for analysis. This involved tasks such as resizing the images to a uniform size, normalizing pixel values, and splitting the data into training and testing sets. Data augmentation techniques were applied to enhance the model's ability to generalize.</p>
+							<p>Efficient data loading techniques were implemented to streamline model training, optimizing batch performance to expedite model training and evaluation.</p>
+							<p>An in-depth understanding of tensors, the core data structure in PyTorch, was achieved, allowing for efficient data manipulation and processing.</p>
+							<p>Data visualization and exploration were performed to gain insights into the datasets, helping identify underlying patterns and features in the images, which contributed to more informed model development.</p>
+							<p>Different models were developed, including a simple linear neural network, a ReLU-based network, and a Convolutional Neural Network (CNN) tailored to the nature of the datasets.</p>
+					
+							<!-- Outcome -->
+							<p><strong>Outcome:</strong></p>
+							<p>Effective data preprocessing and loading for analysis. Proficiency in handling tensors, the fundamental data structure in PyTorch. Development of various models, including a linear neural network, ReLU-based network, and a CNN, for image classification, with the best model being able to classify <strong>88%</strong> of images correctly</p>
+					
 							<ul class="actions special">
 								<li><a href="https://github.com/TonpaZoldyck/Computervisionpytorch/blob/main" class="button">See More</a></li>
 							</ul>
 						</div>
 					</div>
+					
 					</div>
 			</div>
 		</section>
@@ -527,16 +585,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		-->
 
 		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="https://github.com/TonpaZoldyck" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="https://www.linkedin.com/in/abdelhamid-ben-brahim-b66560173/" class="icon brands alt fab fa-linkedin"><span class="label">linkedin</span></a></li>
-					<li><a href="mailto:abdelhamidbenbrahim45@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-				<!-- </ul>
-				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul> -->
-			</section>
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="https://github.com/TonpaZoldyck" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				<li><a href="https://www.linkedin.com/in/abdelhamid-ben-brahim-b66560173/" class="icon brands alt fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:abdelhamidbenbrahim45@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+				<li><a href="abdelhamid (DS) CV 5.docx" class="icon solid alt fa-file-pdf"><span class="label">Download CV</span></a></li>
+			</ul>
+		</section>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
