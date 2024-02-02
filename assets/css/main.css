@@ -3545,3 +3545,27 @@ input, select, textarea {
     padding: 0;
     margin: 0;
 }
+
+.tablinks {
+    position: relative; /* Make the button a positioned container */
+    height: auto; /* Reset the height to accommodate content */
+    padding-bottom: 20px; /* Add padding at the bottom to create space for the mini description */
+    font-size: 16px; /* Adjust the font size of the main text */
+	white-space: normal;
+}
+
+/* Style the mini description */
+.mini-description {
+    position: absolute; /* Position the mini description absolutely within the button */
+    bottom: 5px; /* Position the mini description at the bottom of the button */
+    left: 50%; /* Move the mini description to the middle horizontally */
+    transform: translateX(-50%); /* Center the mini description horizontally */
+    font-size: 12px; /* Adjust the size as needed */
+    line-height: 1; /* Reset line height for better alignment */
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	text-transform: none;
+}
+
+
+

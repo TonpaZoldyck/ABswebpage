@@ -7,6 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -15,13 +18,15 @@
 		<section id="header">
 			<div class="inner">
 				<span class="icon solid major fa-cloud"></span>
-				<h1>Hi, I'm <strong>Abdel</strong>, a Data Scientist.</h1>
+				<h1>Hi, I'm <strong>Abdel</strong>, a Data Analyst.</h1>
 				<p>With a strong foundation in statistics and exceptional data analysis skills, I am well-equipped to drive business success through insights.</p>
 				<ul class="actions special">
 					<!-- Add your navigation button here -->
 					<li><a href="#two" class="button">About me</a></li>
 					<li><a href="#one" class="button scrolly">Discover</a></li>
 					<li><a href="#three" class="button">My Projects</a></li>
+					<li><a href="#four" class="button">Coming Soon</a></li>
+					<li><a href="#footer" class="button">Contact</a></li>
 				</ul>
 			</div>
 		</section>
@@ -114,12 +119,34 @@
 		<div class="row gtr-150">
 					<!-- TRAIL SECTION THREE 	 -->
 		<div class="tab">
-			<button class="tablinks" onclick="openProject(event, 'project1')" id="defaultOpen">Project 1</button>
-			<button class="tablinks" onclick="openProject(event, 'project2')">Project 2</button>
-			<button class="tablinks" onclick="openProject(event, 'project3')">Project 3</button>
-			<button class="tablinks" onclick="openProject(event, 'project4')">Project 4</button>
-			<button class="tablinks" onclick="openProject(event, 'project5')">Project 5</button>
-			<button class="tablinks" onclick="openProject(event, 'project6')">Project 6</button>
+			<button class="tablinks" onclick="openProject(event, 'project1')" id="defaultOpen">
+				Project 1 <br>
+				<span class="mini-description">NLP Analytics</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project2')">
+				Project 2 <br>
+				<span class="mini-description">Moive Recommendations</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project3')">
+				Project 3 <br>
+				<span class="mini-description">Defaults Predictor</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project4')">
+				Project 4 <br>
+				<span class="mini-description">Revenue Dashboard</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project5')">
+				Project 5 <br>
+				<span class="mini-description">Computer Vision</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project6')">
+				Project 6 <br>
+				<span class="mini-description">Flight Analytics</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project7')">
+				Project 7 <br>
+				<span class="mini-description">Retail Dashboard</span>
+			</button>
 			<!-- Add more buttons for other projects -->
 		</div>
 		<p></p>
@@ -280,6 +307,34 @@
 				</ul>
 			</div>
 		</div>
+
+
+		<div id="project7" class="tabcontent">
+			<div class="project-item">
+				<span class="image fit"><img src="images\revenue-dashboard.PNG" alt="" /></span>
+				<h3>Project 7 - Dynamic Parameters Dashboard for Retail Analytics</h3>
+				
+				<!-- Goal -->
+				<p><strong>Goal</strong></p>
+				<p>As a Revenue Analytics expert, I spearheaded a transformative initiative aimed at providing comprehensive revenue insights for a retail client. The goal was to craft a dynamic parameters dashboard showcasing revenue, profits, costs, and returns for products, regions, states, time periods, and stores, with drill-through capabilities for deeper analysis.</p>
+				
+				<!-- Methods/Work Done -->
+				<p><strong>Work Done</strong></p>
+				<p>Traditionally, analyzing revenue data for retail clients was a cumbersome process involving manual extraction and analysis. Leveraging my expertise in Power BI and data visualization, I developed a dynamic dashboard that revolutionized revenue analytics.</p>
+				<p>By implementing advanced features of Power BI, including Power Query and DAX, I transformed the data into actionable insights. The dashboard allows stakeholders to visualize revenue trends over time, by geographical regions, stores, and individual products.</p>
+				<p>One of the key achievements was the development of drill-through options, enabling users to dive deeper into specific regions, stores, or product categories for granular analysis. This not only enhanced decision-making but also improved operational efficiency.</p>
+				
+				<!-- Outcome -->
+				<p><strong>Outcome</strong></p>
+				<p>Project 7 aimed to provide comprehensive revenue insights for a retail client through the creation of a dynamic parameters dashboard. By leveraging Power BI, Power Query, and DAX, the project successfully transformed cumbersome manual processes into intuitive data visualizations. The implementation of drill-through options allowed for deeper analysis and improved decision-making.</p>
+				
+				<ul class="actions special">
+					<li><button disabled class="button">Client Confidential</button></li>
+				</ul>
+			</div>
+		</div>
+		
+		
 	</div>
 
 
@@ -298,6 +353,8 @@
 					<h2>Coming Soon</h2>
 				</header>
 				<div class="coming-soon-content">
+					<p>Cookie Clicker Programed Bot to Automate the game...</p>
+					<p>Roberta Text Emotion Predictior on AWS...</p>
 					<p>Nasa Habitability Analysis...</p>
 					<p>Developing my own chess engine...</p>
 					<p>Fitbit API health analytics...</p>
