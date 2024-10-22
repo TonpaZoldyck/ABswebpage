@@ -112,7 +112,7 @@
 		
 <!-- Three -->
 <section id="three" class="main style1 special">
-	<div class="container">
+	<div class="container">				
 		<header class="major">
 			<h2>My Projects</h2>
 		</header>
@@ -121,34 +121,38 @@
 		<div class="tab">
 			<button class="tablinks" onclick="openProject(event, 'project1')" id="defaultOpen">
 				Project 1 <br>
-				<span class="mini-description">NLP Analytics</span>
+				<span class="mini-description">Trading & Productivity</span>
 			</button>
-			<button class="tablinks" onclick="openProject(event, 'project2')">
+			<button class="tablinks" onclick="openProject(event, 'project2')" id="defaultOpen">
 				Project 2 <br>
-				<span class="mini-description">Moive Recommendations</span>
+				<span class="mini-description">NLP Analytics</span>
 			</button>
 			<button class="tablinks" onclick="openProject(event, 'project3')">
 				Project 3 <br>
-				<span class="mini-description">Defaults Predictor</span>
+				<span class="mini-description">Moive Recommendations</span>
 			</button>
 			<button class="tablinks" onclick="openProject(event, 'project4')">
 				Project 4 <br>
-				<span class="mini-description">Revenue Dashboard</span>
+				<span class="mini-description">Defaults Predictor</span>
 			</button>
 			<button class="tablinks" onclick="openProject(event, 'project5')">
 				Project 5 <br>
-				<span class="mini-description">Computer Vision</span>
+				<span class="mini-description">Revenue Dashboard</span>
 			</button>
 			<button class="tablinks" onclick="openProject(event, 'project6')">
 				Project 6 <br>
-				<span class="mini-description">Flight Analytics</span>
+				<span class="mini-description">Computer Vision</span>
 			</button>
 			<button class="tablinks" onclick="openProject(event, 'project7')">
 				Project 7 <br>
-				<span class="mini-description">Retail Dashboard</span>
+				<span class="mini-description">Flight Analytics</span>
 			</button>
 			<button class="tablinks" onclick="openProject(event, 'project8')">
 				Project 8 <br>
+				<span class="mini-description">Retail Dashboard</span>
+			</button>
+			<button class="tablinks" onclick="openProject(event, 'project9')">
+				Project 9 <br>
 				<span class="mini-description">Automation Bot</span>
 			</button>
 			<!-- Add more buttons for other projects -->
@@ -158,8 +162,34 @@
 		<!-- Tab content -->
 		<div id="project1" class="tabcontent" style="display:block;">
 			<div class="project-item">
+				<span class="image fit"><img src="images\Productivity background.jpg" alt="" /></span>
+				<h2>Project 1 - Trading & Productivity Dashboard</h2>
+			
+				<!-- Goal -->
+				<p><strong>Goal</strong></p>
+				<p>The client faced a challenge with their weekly trading meetings, which involved manually pulling reports from the front end of their systems, exporting to Excel, and building reports on KPIs, utilization, billings, recovery rates, and WIP. This process was repetitive, inefficient, and prone to errors. The proposed solution was to use Azure pipelines and data lakes to create a single data model as the source of truth and build a trading dashboard from this.</p>
+			
+				<!-- Methods/Work Done -->
+				<p><strong>Work done</strong></p>
+				<p>I started by understanding the required output, sketching, planning, and improving visuals and analytics, and presenting this to senior management. Once agreed, I reverse-engineered the process to understand what I needed the data model to look like (star schema). Then I planned out the required table structures and views I needed in the data lake.</p>
+				<p>I then went to the SQL database backend of our practice management system and used SQL to transform the data as required. For example, I created views to aggregate billings by service line and utilized window functions to calculate rolling averages for utilization rates.</p>
+				<p>Then I utilized Azure Data Factory pipelines to pull data, implementing sense checks and pulling only the required data. This included filtering out irrelevant records and ensuring data integrity through validation checks. Finally, I did the final transformations and manipulations within the data lake using Python and SQL to prep data for reporting. For instance, I used Python scripts to clean and normalize data, and SQL to create summary tables for quick access in reports.</p>
+				<p>I connected the data into Power BI, built the data model, set up the required DAX measures and calculated columns, and built out the planned reports. The visuals included dynamic dashboards that allowed for detailed analysis of productivity metrics such as billings over time, utilization by service, partner, team, employees, and groups. These beautiful dashboards enabled significantly more analysis than before, providing insights into performance and efficiency.</p>
+				<!-- Outcome -->
+				<p><strong>Outcome</strong></p>
+				<p>They loved it; it was like magic to them. Now, some months down the line, this dashboard is always used, and the process of constantly building weekly reports was done. The pipeline triggered, and then the BI refresh, and voila, we had a beautiful dashboard to work with. This led to significant practical efficiencies as now partners and management could review data daily and keep track of their teams' and service lines' performance.</p>
+				
+				<!--See more button-->
+				<ul class="actions special">
+					<li><button disabled class="button">Client Confidential</button></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="project2" class="tabcontent" style="display:block;">
+			<div class="project-item">
 				<span class="image fit"><img src="https://usustatesman.com/wp-content/uploads/2017/01/movie-reviews-design-1050x492.jpg" alt="" /></span>
-				<h2>Project 1 - IMDb NLP Sentiment Analysis</h2>
+				<h2>Project 2 - IMDb NLP Sentiment Analysis</h2>
 			
 				<!-- Goal -->
 				<p><strong>Goal</strong></p>
@@ -183,10 +213,10 @@
 			</div>
 		</div>
 
-		<div id="project2" class="tabcontent">
+		<div id="project3" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images/movies_cover.webp" alt="" /></span>
-				<h3>Project 2 - Movie Recommendation System</h3>
+				<h3>Project 3 - Movie Recommendation System</h3>
 			
 				<!-- Goal -->
 				<p><strong>Goal:</strong></p>
@@ -209,10 +239,10 @@
 			</div>
 		</div>
 
-		<div id="project3" class="tabcontent">
+		<div id="project4" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images/creditcard.jpg" alt="" /></span>
-				<h3>Project 3 - Credit Card Defaults Application</h3>
+				<h3>Project 4 - Credit Card Defaults Application</h3>
 			
 				<!-- Goal -->
 				<p><strong>Goal</strong></p>
@@ -234,10 +264,10 @@
 			</div>
 		</div>
 
-		<div id="project4" class="tabcontent">
+		<div id="project5" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images/powerbi.png" alt="" /></span>
-				<h3>Project 4 - Power Bi/ Revenue Sampling</h3>
+				<h3>Project 5 - Power Bi/ Revenue Sampling</h3>
 			
 				<!-- Goal -->
 				<p><strong>Goal</strong></p>
@@ -260,10 +290,10 @@
 			</div>
 		</div>
 
-		<div id="project5" class="tabcontent">
+		<div id="project6" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images/what_is_Computer_Vision.jpg.webp" alt="" /></span>
-				<h3>Project 5 - Image Recognition</h3>
+				<h3>Project 6 - Image Recognition</h3>
 		
 				<!-- Goal -->
 				<p><strong>Goal:</strong></p>
@@ -287,10 +317,10 @@
 			</div>
 		</div>
 
-		<div id="project6" class="tabcontent">
+		<div id="project7" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images/Flightdelay.jpg" alt="" /></span>
-				<h3>Project 6 - Flight Delay Analytics</h3>
+				<h3>Project 7 - Flight Delay Analytics</h3>
 				
 				 <!-- Goal -->
 				 <p><strong>Goal:</strong></p>
@@ -313,10 +343,10 @@
 		</div>
 
 
-		<div id="project7" class="tabcontent">
+		<div id="project8" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images\revenue-dashboard.PNG" alt="" /></span>
-				<h3>Project 7 - Dynamic Parameters Dashboard for Retail Analytics</h3>
+				<h3>Project 8 - Dynamic Parameters Dashboard for Retail Analytics</h3>
 				
 				<!-- Goal -->
 				<p><strong>Goal</strong></p>
@@ -330,7 +360,7 @@
 				
 				<!-- Outcome -->
 				<p><strong>Outcome</strong></p>
-				<p>Project 7 aimed to provide comprehensive revenue insights for a retail client through the creation of a dynamic parameters dashboard. By leveraging Power BI, Power Query, and DAX, the project successfully transformed cumbersome manual processes into intuitive data visualizations. The implementation of drill-through options allowed for deeper analysis and improved decision-making.</p>
+				<p>This project aimed to provide comprehensive revenue insights for a retail client through the creation of a dynamic parameters dashboard. By leveraging Power BI, Power Query, and DAX, the project successfully transformed cumbersome manual processes into intuitive data visualizations. The implementation of drill-through options allowed for deeper analysis and improved decision-making.</p>
 				
 				<ul class="actions special">
 					<li><button disabled class="button">Client Confidential</button></li>
@@ -339,10 +369,10 @@
 		</div>
 
 		
-		<div id="project8" class="tabcontent">
+		<div id="project9" class="tabcontent">
 			<div class="project-item">
 				<span class="image fit"><img src="images\chatbotimage.jpg" alt="" style="height: 700px;" /></span>
-				<h3>Project 8 - Cookie Clicker Automation Bot</h3>
+				<h3>Project 9 - Cookie Clicker Automation Bot</h3>
 				
 				<!-- Goal -->
 				<p><strong>Goal</strong></p>
