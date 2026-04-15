@@ -23,13 +23,19 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand">AB</a>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="nav-active">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="nav-overlay" id="nav-overlay"></div>
         </div>
     </nav>
 
@@ -49,7 +55,7 @@
     </section>
 
     <!-- About (Short) -->
-    <section id="about" style="padding-top: 2.5rem; padding-bottom: 2.5rem; background-color: var(--bg-card);">
+    <section id="about" class="about-short-section">
         <div class="container">
             <div class="about-content" id="about-short">
                 <p>I specialise in building robust, auditable data pipelines for the financial services sector — taking full ownership of regulatory reporting systems from orchestration through to delivery. My focus is on reliable data, strong controls, and measurable performance impact.</p>
@@ -64,7 +70,7 @@
     <section id="featured-projects">
         <div class="container">
             <h2 class="section-title" style="margin-bottom: 0.5rem;">Featured Projects</h2>
-            <p style="color: var(--text-muted); margin-bottom: 4rem;">Selected work demonstrating impact, ownership, and technical depth.</p>
+            <p style="color: var(--text-secondary); margin-bottom: 4rem;">Selected work demonstrating impact, ownership, and technical depth.</p>
 
             <div id="featured-projects-list">
                 <!-- Populated by JS -->
@@ -74,7 +80,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" style="background-color: var(--bg-card); padding: 4rem 0;">
+    <section id="skills" class="skills-section">
         <div class="container">
             <h2 class="section-title">Skills Overview</h2>
             <div class="skills-grid" id="skills-grid">
@@ -86,8 +92,8 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 style="margin-bottom: 1rem;">Looking for more detail?</h2>
-            <p style="color: var(--text-muted); font-size: 1.1rem;">Dive deep into my technical projects or read my latest thoughts on data engineering.</p>
+            <h2>Looking for more detail?</h2>
+            <p style="font-size: 1.1rem;">Dive deep into my technical projects or read my latest thoughts on data engineering.</p>
             <div class="cta-buttons">
                 <a href="projects.html" class="btn">View All Projects &rarr;</a>
                 <a href="blog.html" class="btn btn-outline">Read the Blog &rarr;</a>
@@ -110,6 +116,21 @@
     </footer>
 
     <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+
         // Render a featured project card (homepage version — compact)
         function renderFeaturedCard(p, index) {
             const isEven = index % 2 === 1; // alternate layout handled by CSS nth-child

@@ -23,13 +23,19 @@
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="nav-brand">AB</a>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../projects.html">Projects</a></li>
                 <li><a href="../blog.html" class="nav-active">Blog</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
+            <div class="nav-overlay" id="nav-overlay"></div>
         </div>
     </nav>
 
@@ -177,6 +183,23 @@ result = con.execute("""
             <p>&copy; 2026 Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+    </script>
 
 </body>
 </html>
