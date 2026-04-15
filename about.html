@@ -49,10 +49,10 @@
     <section class="about-page-section">
         <div class="container about-page-grid">
 
-            <!-- Left Column -->
+            <!-- Left Column: Bio + Experience -->
             <div class="about-main">
 
-                <div class="about-block">
+                <div class="about-card">
                     <h2 class="section-title">Who I Am</h2>
                     <p>I'm a Data / Analytics Engineer specialising in building robust, auditable data pipelines for the
                         financial services sector. I take full ownership of complex systems — from orchestration and
@@ -63,7 +63,7 @@
                         stack, from raw SQL to orchestrated Python pipelines to dbt model architecture.</p>
                 </div>
 
-                <div class="about-block">
+                <div class="about-card">
                     <h2 class="section-title">Experience</h2>
 
                     <div class="timeline">
@@ -86,112 +86,121 @@
                                     delivery</li>
                             </ul>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">2024 — 2025</span>
+                        <div class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2024 — 2025</span>
+                            </div>
+                            <h3 class="timeline-title">Data Analyst</h3>
+                            <p class="timeline-company">Gravita — UK</p>
+                            <ul class="bullet-list">
+                                <li>Designed and implemented scalable end-to-end analytics solutions, unifying multiple data
+                                    sources into structured data models for reporting and analysis</li>
+                                <li>Developed and optimised Azure Data Factory pipelines to automate data ingestion,
+                                    transformation, and integration across cloud-based systems</li>
+                                <li>Built robust Power BI semantic models using star schema design and advanced DAX
+                                    calculations to deliver high-performance reporting layers</li>
+                                <li>Led end-to-end delivery of analytics solutions across client engagements, independently
+                                    managing requirements gathering, development, and stakeholder presentation of insights
+                                </li>
+                            </ul>
                         </div>
-                        <h3 class="timeline-title">Data Analyst</h3>
-                        <p class="timeline-company">Gravita — UK</p>
-                        <ul class="bullet-list">
-                            <li>Designed and implemented scalable end-to-end analytics solutions, unifying multiple data
-                                sources into structured data models for reporting and analysis</li>
-                            <li>Developed and optimised Azure Data Factory pipelines to automate data ingestion,
-                                transformation, and integration across cloud-based systems</li>
-                            <li>Built robust Power BI semantic models using star schema design and advanced DAX
-                                calculations to deliver high-performance reporting layers</li>
-                            <li>Led end-to-end delivery of analytics solutions across client engagements, independently
-                                managing requirements gathering, development, and stakeholder presentation of insights
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">2020 — 2023</span>
+                        <div class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2020 — 2023</span>
+                            </div>
+                            <h3 class="timeline-title">Assistant Manager</h3>
+                            <p class="timeline-company">Deloitte — UK</p>
+                            <ul class="bullet-list">
+                                <li>Led audit engagements for financial services clients with a strong focus on audit
+                                    analytics and data-driven risk assessment</li>
+                                <li>Applied advanced data analytics techniques to identify anomalies, trends, and financial
+                                    reporting risks</li>
+                                <li>Built and delivered end-to-end financial analysis solutions, improving audit efficiency
+                                    and insight quality across multiple client engagements</li>
+                                <li>Collaborated with clients to translate complex financial data into actionable insights
+                                    and executive-level reporting</li>
+                            </ul>
                         </div>
-                        <h3 class="timeline-title">Assistant Manager</h3>
-                        <p class="timeline-company">Deloitte — UK</p>
-                        <ul class="bullet-list">
-                            <li>Led audit engagements for financial services clients with a strong focus on audit
-                                analytics and data-driven risk assessment</li>
-                            <li>Applied advanced data analytics techniques to identify anomalies, trends, and financial
-                                reporting risks</li>
-                            <li>Built and delivered end-to-end financial analysis solutions, improving audit efficiency
-                                and insight quality across multiple client engagements</li>
-                            <li>Collaborated with clients to translate complex financial data into actionable insights
-                                and executive-level reporting</li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="about-block">
-                <h2 class="section-title">Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">2017 — 2020</span>
+            <!-- Right Column: Education + Skills -->
+            <aside class="about-sidebar">
+
+                <!-- Education Card -->
+                <div class="sidebar-card sidebar-card--education">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="timeline timeline--compact">
+                        <div class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2017 — 2020</span>
+                            </div>
+                            <h3 class="timeline-title">BSc Management Science</h3>
+                            <p class="timeline-company">University College London</p>
                         </div>
-                        <h3 class="timeline-title">Bsc Management Science</h3>
-                        <p class="timeline-company">University College London</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">2020 - 2023</span>
+                        <div class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2020 — 2023</span>
+                            </div>
+                            <h3 class="timeline-title">ACA Qualified Accountant</h3>
+                            <p class="timeline-company">ICAEW</p>
                         </div>
-                        <h3 class="timeline-title">ACA Qualified Accountant</h3>
-                        <p class="timeline-company">ICAEW</p>
                     </div>
-
                 </div>
-            </div>
 
-        </div>
-
-        <!-- Right Column: Skills -->
-        <aside class="about-sidebar">
-            <div class="sidebar-card">
-                <h3><i class="fa-solid fa-code"></i> Languages</h3>
-                <div class="tag-group">
-                    <span class="tag">Python</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">Bash/Shell</span>
+                <!-- Languages Card -->
+                <div class="sidebar-card">
+                    <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                    <div class="tag-group">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Bash/Shell</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="sidebar-card">
-                <h3><i class="fa-solid fa-database"></i> Data Engineering</h3>
-                <ul class="skill-list">
-                    <li>Data Pipelines & ETL/ELT</li>
-                    <li>Data Modelling (dbt, Star Schema)</li>
-                    <li>Data Governance</li>
-                    <li>SQL & Query Optimisation</li>
-                    <li>DuckDB & Parquet</li>
-                    <li>Regulatory Reporting (COREP/FINREP)</li>
-                </ul>
-            </div>
+                <!-- Data Engineering Card -->
+                <div class="sidebar-card">
+                    <h3><i class="fa-solid fa-database"></i> Data Engineering</h3>
+                    <div class="tag-group">
+                        <span class="tag">Pipelines & ETL/ELT</span>
+                        <span class="tag">dbt</span>
+                        <span class="tag">Star Schema</span>
+                        <span class="tag">Data Governance</span>
+                        <span class="tag">Query Optimisation</span>
+                        <span class="tag">DuckDB</span>
+                        <span class="tag">Parquet</span>
+                        <span class="tag">COREP/FINREP</span>
+                    </div>
+                </div>
 
-            <div class="sidebar-card">
-                <h3><i class="fa-solid fa-server"></i> Tools & Platforms</h3>
-                <ul class="skill-list">
-                    <li>dbt (Data Build Tool)</li>
-                    <li>AWS (S3, Glue, Lambda)</li>
-                    <li>Azure Data Factory</li>
-                    <li>Prefect / Orchestration</li>
-                    <li>Power BI & DAX</li>
-                    <li>Git & Version Control</li>
-                </ul>
-            </div>
+                <!-- Tools & Platforms Card -->
+                <div class="sidebar-card">
+                    <h3><i class="fa-solid fa-server"></i> Tools & Platforms</h3>
+                    <div class="tag-group">
+                        <span class="tag">dbt</span>
+                        <span class="tag">AWS S3</span>
+                        <span class="tag">AWS Glue</span>
+                        <span class="tag">Lambda</span>
+                        <span class="tag">Azure Data Factory</span>
+                        <span class="tag">Prefect</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
 
-            <div class="sidebar-card">
-                <h3><i class="fa-solid fa-file-arrow-down"></i> CV</h3>
-                <a href="abdelhamid (DS) CV 5.docx" download class="btn" style="width:100%; justify-content:center;">
-                    Download CV
-                </a>
-            </div>
-        </aside>
+                <!-- CV Download Card -->
+                <div class="sidebar-card">
+                    <h3><i class="fa-solid fa-file-arrow-down"></i> CV</h3>
+                    <a href="abdelhamid (DS) CV 5.docx" download class="btn btn--cv">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+
+            </aside>
 
         </div>
     </section>

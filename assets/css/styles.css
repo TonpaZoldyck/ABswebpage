@@ -659,27 +659,54 @@ footer p {
    ABOUT PAGE
 ───────────────────────────────────────── */
 .about-page-section {
-  padding: 4rem 0 6rem;
+  padding: 3.5rem 0 6rem;
+}
+
+.about-page-section .container {
+  max-width: 1120px;
 }
 
 .about-page-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 4rem;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
   align-items: start;
 }
 
-.about-block {
-  margin-bottom: 3rem;
+/* ── Left Column Cards ── */
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease;
 }
 
-.about-block p {
+.about-card:last-child {
+  margin-bottom: 0;
+}
+
+.about-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.about-card p {
   font-size: 1.05rem;
   color: #374151;
   line-height: 1.75;
 }
 
-/* Timeline */
+.about-card .section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  display: inline-block;
+}
+
+/* ── Timeline ── */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -701,6 +728,7 @@ footer p {
   height: 8px;
   border-radius: 50%;
   background: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .timeline-meta {
@@ -741,11 +769,38 @@ footer p {
   margin-bottom: 0.75rem;
 }
 
-/* About Sidebar */
+/* ── Compact Timeline (sidebar) ── */
+.timeline--compact .timeline-item {
+  padding: 0.75rem 0 0.75rem 1.25rem;
+  border-left-width: 2px;
+}
+
+.timeline--compact .timeline-item::before {
+  width: 6px;
+  height: 6px;
+  left: -4px;
+  top: 1rem;
+}
+
+.timeline--compact .timeline-title {
+  font-size: 0.95rem;
+  margin-bottom: 0.1rem;
+}
+
+.timeline--compact .timeline-company {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline--compact .timeline-date {
+  font-size: 0.72rem;
+}
+
+/* ── About Sidebar ── */
 .about-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   position: sticky;
   top: 6rem;
 }
@@ -754,24 +809,48 @@ footer p {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1.25rem;
+  padding: 1.25rem 1.5rem;
   box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease;
+}
+
+.sidebar-card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .sidebar-card h3 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-main);
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
+.sidebar-card h3 i {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Education card styling */
+.sidebar-card--education {
+  border-left: 3px solid var(--primary-color);
+}
+
+/* Tag groups (compact skill grid) */
 .tag-group {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+/* CV Download button */
+.btn--cv {
+  width: 100%;
+  justify-content: center;
 }
 
 /* ─────────────────────────────────────────
@@ -874,8 +953,16 @@ footer p {
     gap: 2rem;
   }
 
+  .about-card {
+    padding: 1.5rem;
+  }
+
   .about-sidebar {
     position: static;
+  }
+
+  .sidebar-card--education {
+    border-left-width: 3px;
   }
 
   .nav-links {
