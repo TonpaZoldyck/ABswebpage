@@ -1,0 +1,220 @@
+{
+  "profile": {
+    "name": "Abdelhamid Ben Brahim",
+    "shortName": "Abdel",
+    "title": "Data Engineer | Analytics Engineering | Financial Services",
+    "tagline": "I build scalable data pipelines and regulatory reporting systems that deliver reliable, high-impact insights.",
+    "about": "I am a Data / Analytics Engineer specialising in robust, auditable data pipelines for the financial services sector. I take full ownership of complex orchestration and regulatory reporting systems — accelerating data delivery while ensuring total compliance and data integrity.",
+    "socials": {
+      "github": "https://github.com/TonpaZoldyck",
+      "linkedin": "https://www.linkedin.com/in/abdelhamid-ben-brahim/",
+      "email": "mailto:abdelhamid.benbrahim@outlook.com"
+    },
+    "cv": "abdelhamid (DS) CV 5.docx"
+  },
+
+  "featuredProjects": [
+    {
+      "id": "pipeline-optimisation",
+      "label": "Performance Engineering",
+      "labelIcon": "fa-bolt",
+      "title": "Data Pipeline Optimisation & Performance Engineering",
+      "summary": "Optimised a large-scale regulatory data pipeline, significantly reducing processing time and improving reporting delivery across monthly cycles.",
+      "impact": [
+        "Reduced GL processing time from ~1.5 hours → 30 minutes (67% improvement)",
+        "Reduced total pipeline runtime from ~2.5 hours → ~1 hour (~60% improvement)",
+        "Enabled faster and more reliable regulatory reporting cycles"
+      ],
+      "whatIDid": [
+        "Identified bottlenecks in data ingestion and transformation layers",
+        "Replaced inefficient Pandas-based loading with direct streaming from Parquet into DuckDB",
+        "Refactored SQL transformations and optimised query pushdown performance",
+        "Improved orchestration flow to reduce idle time and improve execution efficiency"
+      ],
+      "tech": ["Python", "SQL", "DuckDB", "Parquet", "dbt"],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "regulatory-system",
+      "label": "System Ownership",
+      "labelIcon": "fa-shield-halved",
+      "title": "End-to-End Regulatory Reporting Pipeline (COREP/FINREP)",
+      "summary": "Owned and maintained a critical regulatory reporting pipeline generating outputs for COREP/FINREP frameworks submitted to regulators.",
+      "impact": [
+        "Enabled automated, auditable reporting outputs for regulatory submission",
+        "Reduced manual intervention and improved data reliability across reporting cycles",
+        "Supported audit processes with improved traceability and controls"
+      ],
+      "whatIDid": [
+        "Managed full pipeline ownership — orchestration, transformation, and delivery",
+        "Built and maintained dbt models implementing COREP/FINREP reporting logic",
+        "Integrated multiple upstream data sources into a single reporting layer",
+        "Implemented robust validation and reconciliation checks",
+        "Led BAU changes, system improvements, and incident resolution"
+      ],
+      "tech": ["dbt", "SQL", "Python", "AWS", "Prefect"],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "mortgage-integration",
+      "label": "Rapid Integration",
+      "labelIcon": "fa-code-merge",
+      "title": "Large-Scale Mortgage Portfolio Integration",
+      "summary": "Integrated newly acquired mortgage portfolios into the regulatory reporting pipeline under significantly accelerated timelines.",
+      "impact": [
+        "Delivered full integration in ~6 weeks against a ~3-month standard timeline",
+        "Enabled immediate inclusion of new portfolios in regulatory reporting cycles",
+        "Established a reusable integration pattern improving scalability for future onboarding"
+      ],
+      "whatIDid": [
+        "Led end-to-end data mapping and transformation design for new portfolio data",
+        "Built dbt models to integrate and normalise new datasets into reporting layer",
+        "Implemented validation and reconciliation checks to ensure data integrity",
+        "Worked closely with stakeholders to align technical outputs with reporting requirements"
+      ],
+      "tech": ["SQL", "dbt", "Python"],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "treasury-integration",
+      "label": "Data Completeness",
+      "labelIcon": "fa-vault",
+      "title": "Treasury System Integration",
+      "summary": "Integrated treasury data into the central regulatory reporting pipeline to enhance financial reporting completeness and accuracy.",
+      "impact": [
+        "Improved coverage and completeness of financial reporting outputs",
+        "Reduced manual adjustments and reconciliation effort across reporting cycles",
+        "Ensured data consistency across regulatory and management reporting systems"
+      ],
+      "whatIDid": [
+        "Designed new data models to accommodate treasury data structures",
+        "Implemented transformation logic in dbt to integrate treasury into reporting layer",
+        "Added validation controls and data quality checks to ensure accuracy",
+        "Collaborated with treasury and business teams to align on requirements"
+      ],
+      "tech": ["SQL", "dbt", "Python"],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+
+  "additionalProjects": [
+    {
+      "id": "movie-recommendation",
+      "title": "Movie Recommendation System",
+      "summary": "A personalised movie recommendation system designed to enhance user experience through predictive modelling and collaborative filtering.",
+      "impact": [
+        "Improved baseline model loss by 36% through iterative model development",
+        "Benchmarked SVD, Regression, SVR, and Neural Network models for comparative analysis"
+      ],
+      "whatIDid": [
+        "Designed and implemented foundational SVD collaborative filtering models",
+        "Scaled up to advanced algorithms including Random Forest and PyTorch neural networks",
+        "Engineered features from raw datasets following comprehensive exploratory data analysis"
+      ],
+      "tech": ["Python", "PyTorch", "Machine Learning", "Random Forest", "Data Pipeline"],
+      "github": "https://github.com/TonpaZoldyck/Moviematcher",
+      "image": "https://images.unsplash.com/photo-1543536448-d209d2d13a1c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "imdb-nlp",
+      "title": "IMDb NLP Sentiment Analysis",
+      "summary": "An NLP pipeline classifying cinematic reviews into positive and negative sentiments using BigQuery and a custom CNN model.",
+      "impact": [
+        "Achieved 87% predictive accuracy with a custom Convolutional Neural Network"
+      ],
+      "whatIDid": [
+        "Extracted large datasets using complex Google BigQuery SQL queries",
+        "Preprocessed text data using Count Vectorization and tokenisation",
+        "Engineered a CNN model to automate sentiment classification at scale"
+      ],
+      "tech": ["Python", "SQL / BigQuery", "NLP", "Neural Networks", "Looker"],
+      "github": "https://github.com/TonpaZoldyck/moviereviewsNLPmodeling",
+      "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "credit-default",
+      "title": "Credit Card Defaults Prediction",
+      "summary": "A machine learning model designed to assess default likelihood for credit card holders and mitigate financial risk.",
+      "impact": [
+        "Achieved 82% overall accuracy and 43% recall on proactive default identification"
+      ],
+      "whatIDid": [
+        "Managed data wrangling, preparation, and handling of classification imbalances",
+        "Built an ensemble model using Naive Bayes, Logistic Regression, XGBoost, and SVM",
+        "Conducted extensive hyperparameter tuning to maximise recall performance"
+      ],
+      "tech": ["Python", "XGBoost", "Machine Learning"],
+      "github": "https://github.com/TonpaZoldyck/CreditCardDefualtsProject",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "revenue-dashboard",
+      "title": "Revenue Testing & Sampling Automation",
+      "summary": "Overhaul of the receivables and revenue testing process for a prominent UK-based property client.",
+      "impact": [
+        "Reduced manual sampling and testing duration from 8 days to 2 days (75% reduction)",
+        "Implemented targeted sampling logic for high-risk areas, boosting audit precision"
+      ],
+      "whatIDid": [
+        "Established a robust, repeatable data model using Power Query",
+        "Engineered sophisticated DAX measures for dynamic reporting logic",
+        "Built an automated dynamic reporting application, centralising disparate data processes"
+      ],
+      "tech": ["Power BI", "DAX", "Power Query"],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "trading-productivity",
+      "title": "Azure Trading & Productivity Engineering",
+      "summary": "End-to-end data pipeline replacing manual Excel dependency for tracking utilisation and global weekly trading metrics.",
+      "impact": [
+        "Eliminated manual extraction lags, enabling daily dashboard intelligence for partners",
+        "Improved visibility across critical KPIs — billings, capacity, and pipeline WIP"
+      ],
+      "whatIDid": [
+        "Re-engineered legacy requirements into a dimensional star-schema data model",
+        "Formulated Azure Data Factory workflows to ingest unstructured operations logs",
+        "Enacted automated validation metrics via Python culminating in a Power BI semantic layer"
+      ],
+      "tech": ["Azure Data Factory", "Data Modeling", "Python", "Power BI"],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+
+  "skills": {
+    "languages": ["Python", "SQL", "Bash"],
+    "dataEngineering": [
+      "Data Pipelines & ETL/ELT",
+      "Data Modelling (Star Schema, dbt)",
+      "SQL & Query Optimisation",
+      "DuckDB & Parquet",
+      "Regulatory Reporting (COREP/FINREP)"
+    ],
+    "toolsPlatforms": [
+      "dbt (Data Build Tool)",
+      "AWS (S3, Glue, Lambda)",
+      "Azure Data Factory",
+      "Prefect / Orchestration",
+      "Power BI & DAX",
+      "Git & Version Control"
+    ]
+  },
+
+  "blogPosts": [
+    {
+      "id": "pipeline-optimisation",
+      "title": "How I Reduced a Data Pipeline Runtime by Over 60%",
+      "date": "2026-04-10",
+      "dateFormatted": "10 April 2026",
+      "summary": "A deep dive into diagnosing and eliminating bottlenecks in a large-scale regulatory data pipeline — replacing Pandas ingestion with direct Parquet-to-DuckDB streaming and applying SQL pushdown optimisation.",
+      "tags": ["Python", "DuckDB", "Parquet", "Performance Engineering"],
+      "url": "blog/pipeline-optimisation.html"
+    }
+  ]
+}

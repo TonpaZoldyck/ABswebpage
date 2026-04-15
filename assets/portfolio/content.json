@@ -1,0 +1,93 @@
+{
+  "profile": {
+    "name": "Abdel",
+    "title": "Data Engineer | Analytics Engineering | Financial Services",
+    "summary": "I build scalable data pipelines and regulatory reporting systems that deliver reliable, high-impact insights."
+  },
+  "featured_projects": [
+    {
+      "id": "pipeline-optimisation",
+      "title": "High-Performance Data Pipeline Optimisation",
+      "summary": "Reduced regulatory pipeline runtime by over 60% through architectural redesign and query optimisation.",
+      "impact": [
+        "GL processing reduced from 1.5h → 30 mins",
+        "Total pipeline runtime reduced by ~60%",
+        "Improved reliability of regulatory reporting cycles"
+      ],
+      "tech": [
+        "Python",
+        "SQL",
+        "DuckDB",
+        "dbt"
+      ]
+    },
+    {
+      "id": "regulatory-reporting",
+      "title": "End-to-End Regulatory Reporting System",
+      "summary": "Owned production regulatory reporting system generating COREP/FINREP outputs.",
+      "impact": [
+        "Automated regulatory reporting workflows",
+        "Reduced manual intervention",
+        "Improved audit traceability"
+      ],
+      "tech": [
+        "dbt",
+        "SQL",
+        "AWS",
+        "Python"
+      ]
+    },
+    {
+      "id": "movie-recommender",
+      "title": "Machine Learning Recommendation Engine",
+      "summary": "Built a personalised recommendation system with 36% performance improvement.",
+      "impact": [
+        "36% improvement over baseline",
+        "Implemented multiple ML models",
+        "Extended into deep learning"
+      ],
+      "tech": [
+        "Python",
+        "PyTorch",
+        "Scikit-learn"
+      ]
+    },
+    {
+      "id": "nlp-sentiment",
+      "title": "NLP Sentiment Analysis Engine",
+      "summary": "Developed NLP pipeline achieving 87% accuracy on sentiment classification.",
+      "impact": [
+        "87% classification accuracy",
+        "Processed large-scale text data",
+        "Built CNN-based model"
+      ],
+      "tech": [
+        "Python",
+        "NLP",
+        "SQL"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "mortgage-integration",
+      "title": "Mortgage Portfolio Integration",
+      "summary": "Integrated new mortgage portfolios into production reporting systems.",
+      "status": "confidential"
+    },
+    {
+      "id": "treasury-integration",
+      "title": "Treasury System Integration",
+      "summary": "Integrated treasury data into central reporting pipelines.",
+      "status": "confidential"
+    }
+  ],
+  "blog": [
+    {
+      "id": "pipeline-performance",
+      "title": "How I Reduced a Data Pipeline Runtime by Over 60%",
+      "summary": "How replacing Pandas ingestion with direct DuckDB querying dramatically improved performance.",
+      "date": "2026-04-15"
+    }
+  ]
+}

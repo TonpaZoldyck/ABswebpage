@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Reduced a Data Pipeline Runtime by Over 60% - Abdelhamid Ben Brahim</title>
+    <meta name="description" content="A deep dive into diagnosing and eliminating bottlenecks in a large-scale regulatory data pipeline — replacing Pandas ingestion with direct Parquet-to-DuckDB streaming.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">AB</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html" class="nav-active">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <section class="page-header">
+        <div class="container">
+            <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+            <div class="post-meta-row">
+                <span class="blog-date">10 April 2026</span>
+                <div class="post-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">DuckDB</span>
+                    <span class="tag">Parquet</span>
+                    <span class="tag">Performance Engineering</span>
+                </div>
+            </div>
+            <h1>How I Reduced a Data Pipeline Runtime by Over 60%</h1>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section>
+        <div class="container">
+            <article class="post-content">
+
+                <h2>The Problem</h2>
+                <p>Every month, a critical data pipeline ran for approximately 2.5 hours before delivering outputs for regulatory reporting. For a pipeline this important — feeding COREP/FINREP submissions — that runtime was a real problem. It compressed the review window, increased the blast radius if something went wrong, and made reruns painful.</p>
+                <p>The GL (General Ledger) processing step alone was taking ~1.5 hours. That single component was the biggest bottleneck — and the one I focused on first.</p>
+
+                <h2>Diagnosing the Bottleneck</h2>
+                <p>Before changing anything, I needed to understand <em>why</em> it was slow. I added timing instrumentation across the pipeline and profiled each stage. The picture that emerged was clear:</p>
+                <ul class="bullet-list">
+                    <li>The pipeline was reading large Parquet files (~46M rows) entirely into Pandas DataFrames before doing anything with them</li>
+                    <li>This caused a full materialisation of data into memory — a massive, unnecessary data movement step</li>
+                    <li>Subsequent SQL transformations in DuckDB were being handed pre-loaded data rather than operating directly on Parquet</li>
+                    <li>Orchestration sequencing had implicit idle gaps between stages</li>
+                </ul>
+                <p>The root cause was architectural: the pipeline had been built with Pandas as the central data object, with DuckDB bolted on later. The data was being loaded in full just to be passed to something better suited to handle it natively.</p>
+
+                <h2>The Solution</h2>
+                <p>The fix was conceptually simple but required careful implementation: <strong>remove Pandas from the ingestion path entirely</strong> and let DuckDB read Parquet directly via its native file scanning.</p>
+                <p>DuckDB can query Parquet files with SQL pushdown — meaning predicates, projections, and aggregations are applied at read time without materialising the full dataset. This eliminates the entire "load everything into memory, then filter" pattern that was destroying performance.</p>
+
+                <h2>Implementation</h2>
+                <p>The key change was replacing this pattern:</p>
+
+                <div class="code-block">
+                    <div class="code-label">Before — Pandas ingestion (the bottleneck)</div>
+                    <pre><code># Load the entire 46M row Parquet file into memory
+df = pd.read_parquet("gl_data.parquet")
+
+# Register as DuckDB table
+con.register("gl_data", df)
+
+# Now query it
+result = con.execute("""
+    SELECT account_code, SUM(amount) as total
+    FROM gl_data
+    WHERE reporting_date = '2024-01-31'
+    GROUP BY account_code
+""").df()</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-label">After — Direct Parquet streaming into DuckDB</div>
+                    <pre><code># DuckDB reads Parquet directly with SQL pushdown
+# No intermediate DataFrame — predicates applied at read time
+result = con.execute("""
+    SELECT account_code, SUM(amount) as total
+    FROM read_parquet('gl_data.parquet')
+    WHERE reporting_date = '2024-01-31'
+    GROUP BY account_code
+""").df()</code></pre>
+                </div>
+
+                <p>This looks like a small change, but the implications are significant. With the <code>read_parquet()</code> approach:</p>
+                <ul class="bullet-list">
+                    <li>DuckDB applies the <code>WHERE</code> filter at Parquet scan time, only reading relevant row groups</li>
+                    <li>Column projection means only requested columns are read from disk</li>
+                    <li>No Python object is created for the 46M rows — memory pressure drops dramatically</li>
+                    <li>The entire operation runs inside DuckDB's vectorised execution engine, which is significantly faster than Pandas for this type of aggregation</li>
+                </ul>
+
+                <h3>Additional Optimisations</h3>
+                <p>Beyond the ingestion change, I made two further improvements:</p>
+                <ul class="bullet-list">
+                    <li><strong>SQL transformation refactoring:</strong> Several dbt models had suboptimal join orders and missing indexes on lookup tables. Rewriting these reduced individual query times significantly.</li>
+                    <li><strong>Orchestration sequencing:</strong> Prefect flow tasks had unnecessary sequential dependencies where parallel execution was safe. Restructuring the DAG reduced idle wait time between stages.</li>
+                </ul>
+
+                <h2>Result</h2>
+                <p>After implementing these changes:</p>
+
+                <div class="result-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Before</th>
+                                <th>After</th>
+                                <th>Improvement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GL Processing</td>
+                                <td>~1.5 hours</td>
+                                <td>~30 minutes</td>
+                                <td><strong>67% faster</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Total Pipeline</td>
+                                <td>~2.5 hours</td>
+                                <td>~1 hour</td>
+                                <td><strong>~60% faster</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Why It Matters</h2>
+                <p>A 60% runtime reduction on a regulatory pipeline isn't just a performance win — it's a risk reduction. When the review window after a pipeline run is measured in hours before a submission deadline, every minute matters.</p>
+                <p>Faster runtimes mean more time for validation and reconciliation before submission. They also mean reruns are cheaper — so the team is more willing to rerun when something looks off, rather than pushing through with uncertainty.</p>
+                <p>More broadly, this optimisation illustrates a principle I apply consistently: <strong>the best data movement is no data movement</strong>. Before adding infrastructure, check whether a tool you already have can handle the problem natively. In this case, DuckDB was already in the stack — it just wasn't being used to its full capability.</p>
+
+                <div class="post-footer">
+                    <a href="../blog.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+                    <a href="../projects.html#pipeline-optimisation" class="btn">View Project Details &rarr;</a>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="nav-links" style="justify-content: center; margin-bottom: 1.5rem;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2026 Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

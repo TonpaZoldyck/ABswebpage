@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Abdelhamid Ben Brahim | Data Engineer</title>
+    <meta name="description" content="Full project archive — data pipelines, regulatory reporting systems, ML models, and analytics engineering work by Abdelhamid Ben Brahim.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">AB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="nav-active">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header">
+        <div class="container">
+            <h1>All Projects</h1>
+            <p class="page-subtitle">Detailed breakdowns of data engineering pipelines, analytics systems, and machine learning models.</p>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="featured" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div id="featured-projects-list">
+                <div class="loading-placeholder">Loading&hellip;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Projects Section -->
+    <section id="additional" style="background-color: var(--bg-card); padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title">Additional Projects</h2>
+            <div id="additional-projects-list">
+                <div class="loading-placeholder">Loading&hellip;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="nav-links" style="justify-content: center; margin-bottom: 1.5rem;">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2026 Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Render full featured project card
+        function renderFeaturedProject(p) {
+            const confidentialBtn = `<span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>`;
+            const githubBtn = p.github
+                ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn"><i class="fab fa-github"></i> View Repository</a>`
+                : confidentialBtn;
+
+            return `
+                <div class="project-card" id="${p.id}">
+                    <div class="project-img">
+                        <img src="${p.image}" alt="${p.title}" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <span class="featured-label">
+                            <i class="fa-solid ${p.labelIcon}"></i> ${p.label}
+                        </span>
+                        <h3 class="project-title">${p.title}</h3>
+                        <div class="project-summary">${p.summary}</div>
+
+                        <h4 class="project-section-title">Key Impact</h4>
+                        <ul class="bullet-list">
+                            ${p.impact.map(i => `<li>${i}</li>`).join('')}
+                        </ul>
+
+                        <h4 class="project-section-title">What I Did</h4>
+                        <ul class="bullet-list">
+                            ${p.whatIDid.map(w => `<li>${w}</li>`).join('')}
+                        </ul>
+
+                        <div class="project-tags">
+                            ${p.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+
+                        <div class="project-links">
+                            ${p.status === 'confidential' ? confidentialBtn : githubBtn}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render additional project card
+        function renderAdditionalProject(p) {
+            const githubBtn = p.github
+                ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn"><i class="fab fa-github"></i> View Repository</a>`
+                : `<span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>`;
+
+            return `
+                <div class="project-card" id="${p.id}">
+                    <div class="project-img">
+                        <img src="${p.image}" alt="${p.title}" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">${p.title}</h3>
+                        <div class="project-summary">${p.summary}</div>
+
+                        <h4 class="project-section-title">Key Impact</h4>
+                        <ul class="bullet-list">
+                            ${p.impact.map(i => `<li>${i}</li>`).join('')}
+                        </ul>
+
+                        <h4 class="project-section-title">What I Did</h4>
+                        <ul class="bullet-list">
+                            ${p.whatIDid.map(w => `<li>${w}</li>`).join('')}
+                        </ul>
+
+                        <div class="project-tags">
+                            ${p.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+
+                        <div class="project-links">
+                            ${githubBtn}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        fetch('content/content.json')
+            .then(r => r.json())
+            .then(data => {
+                const featuredEl = document.getElementById('featured-projects-list');
+                const additionalEl = document.getElementById('additional-projects-list');
+
+                if (data.featuredProjects) {
+                    featuredEl.innerHTML = data.featuredProjects
+                        .map(p => renderFeaturedProject(p))
+                        .join('');
+                }
+
+                if (data.additionalProjects) {
+                    additionalEl.innerHTML = data.additionalProjects
+                        .map(p => renderAdditionalProject(p))
+                        .join('');
+                }
+
+                // Scroll to anchor if present in URL
+                if (window.location.hash) {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('Failed to load content.json:', err);
+                document.getElementById('featured-projects-list').innerHTML =
+                    '<p style="color:var(--text-muted)">Unable to load projects.</p>';
+                document.getElementById('additional-projects-list').innerHTML = '';
+            });
+    </script>
+
+</body>
+</html>

@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdelhamid Ben Brahim - Data Engineer / Analytics Engineer</title>
-    
+    <meta name="description" content="Data Engineer specialising in scalable data pipelines and regulatory reporting systems in financial services. UK-based.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -21,11 +22,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
+            <a href="index.html" class="nav-brand">AB</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="nav-active">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -33,512 +36,165 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Hi, I'm Abdelhamid.</h1>
-            <h2>Data Engineer / Analytics Engineer</h2>
-            <div class="hero-statement">
-                Building scalable data pipelines and regulatory reporting systems in financial services.
+            <h1 id="hero-name">Hi, I'm Abdel.</h1>
+            <h2 id="hero-title">Data Engineer | Analytics Engineering | Financial Services</h2>
+            <div class="hero-statement" id="hero-tagline">
+                I build scalable data pipelines and regulatory reporting systems that deliver reliable, high-impact insights.
+            </div>
+            <div class="cta-buttons" style="justify-content: flex-start; margin-top: 2.5rem;">
+                <a href="#featured-projects" class="btn">View Projects</a>
+                <a href="blog.html" class="btn btn-outline">Read the Blog</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- About (Short) -->
+    <section id="about" style="padding-top: 2.5rem; padding-bottom: 2.5rem; background-color: var(--bg-card);">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    I am a Data / Analytics Engineer specializing in the financial services sector. I have extensive experience in designing, building, and maintaining end-to-end data pipelines that support reliable and scalable regulatory reporting. 
-                </p>
-                <p>
-                    My work is driven by business impact—whether it’s accelerating portfolio integrations from months down to weeks, optimizing data orchestration for significantly faster pipeline runtimes, or taking ownership of complex RRA (Regulatory Reporting Application) architectures.
-                </p>
-                <p>
-                    I thrive in strict regulatory environments where traceability, consistency, and automated validation are critical. I focus on developing modular, auditable data architectures using modern tools like dbt, Python, and SQL.
-                </p>
+            <div class="about-content" id="about-short">
+                <p>I specialise in building robust, auditable data pipelines for the financial services sector — taking full ownership of regulatory reporting systems from orchestration through to delivery. My focus is on reliable data, strong controls, and measurable performance impact.</p>
+                <div class="cta-buttons" style="justify-content: flex-start; margin-top: 1rem;">
+                    <a href="about.html" class="btn btn-outline">Full Experience &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="featured-projects">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Featured Projects</h2>
+            <p style="color: var(--text-muted); margin-bottom: 4rem;">Selected work demonstrating impact, ownership, and technical depth.</p>
+
+            <div id="featured-projects-list">
+                <!-- Populated by JS -->
+                <div class="loading-placeholder">Loading projects&hellip;</div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" style="background-color: var(--bg-card);">
+    <section id="skills" style="background-color: var(--bg-card); padding: 4rem 0;">
         <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-database"></i> Data Engineering</h3>
-                    <ul class="skill-list">
-                        <li>Data Pipelines & ETL/ELT</li>
-                        <li>Data Modeling (Star Schema)</li>
-                        <li>SQL & Query Optimization</li>
-                        <li>Python Transformation</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-server"></i> Platforms</h3>
-                    <ul class="skill-list">
-                        <li>AWS (SageMaker, S3)</li>
-                        <li>Azure Data Factory</li>
-                        <li>Google BigQuery</li>
-                        <li>Moody's RRA System</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-chart-line"></i> BI & Reporting</h3>
-                    <ul class="skill-list">
-                        <li>Power BI & DAX</li>
-                        <li>Power Query</li>
-                        <li>Looker</li>
-                        <li>Regulatory Frameworks (COREP, FINREP)</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Practices</h3>
-                    <ul class="skill-list">
-                        <li>dbt (Data Build Tool)</li>
-                        <li>Git & Version Control</li>
-                        <li>Automated Data Validation</li>
-                        <li>Object-Oriented Programming</li>
-                    </ul>
-                </div>
-
+            <h2 class="section-title">Skills Overview</h2>
+            <div class="skills-grid" id="skills-grid">
+                <!-- Populated by JS -->
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 0.5rem;">Featured Work</h2>
-            <p style="color: var(--text-muted); margin-bottom: 4rem;">A selection of major implementations highlighting system ownership, architectural design, and direct business value.</p>
-            
-            <!-- Project 1: Movie Rec (Old Project 3) -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/movies_cover.webp" alt="Movie Recommendation System" onerror="this.src='https://images.unsplash.com/photo-1543536448-d209d2d13a1c?auto=format&fit=crop&w=800&q=80'">
-                </div>
-                <div class="project-content">
-                    <span class="featured-label"><i class="fa-solid fa-star"></i> Featured ML Project</span>
-                    <h3 class="project-title">Movie Recommendation System</h3>
-                    <div class="project-summary">A personalised movie recommendation system designed to enhance user experience through predictive modelling.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Improved baseline model performance (loss reduction) by 36%.</li>
-                        <li>Successfully benchmarked SVD, Regression, SVR, and Neural Network models against each other.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Designed and implemented foundational SVD models, scaling up to advanced algorithms including Random Forest and PyTorch neural networks. Engineered features from raw datasets following comprehensive exploratory data analysis.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Random Forest</span>
-                        <span class="tag">Data Pipeline</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/TonpaZoldyck/Moviematcher" target="_blank" class="btn"><i class="fab fa-github"></i> View Repository</a>
-                    </div>
-                </div>
+            <h2 style="margin-bottom: 1rem;">Looking for more detail?</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">Dive deep into my technical projects or read my latest thoughts on data engineering.</p>
+            <div class="cta-buttons">
+                <a href="projects.html" class="btn">View All Projects &rarr;</a>
+                <a href="blog.html" class="btn btn-outline">Read the Blog &rarr;</a>
             </div>
-
-            <!-- Project 2: IMDb NLP (Old Project 2) -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="https://usustatesman.com/wp-content/uploads/2017/01/movie-reviews-design-1050x492.jpg" alt="IMDb NLP Model">
-                </div>
-                <div class="project-content">
-                    <span class="featured-label"><i class="fa-solid fa-star"></i> Featured Analytics</span>
-                    <h3 class="project-title">IMDb NLP Sentiment Analysis</h3>
-                    <div class="project-summary">An NLP pipeline classifying cinematic reviews into positive and negative sentiments using BigQuery and Google Colab.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Achieved an 87% predictive accuracy rate with a custom Convolutional Neural Network (CNN).</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Extracted extensive datasets using complex Google BigQuery SQL queries. Preprocessed text using Count Vectorization. Engineered a CNN model to automate sentiment classification.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL / BigQuery</span>
-                        <span class="tag">NLP</span>
-                        <span class="tag">Neural Networks</span>
-                        <span class="tag">Looker</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/TonpaZoldyck/moviereviewsNLPmodeling" target="_blank" class="btn"><i class="fab fa-github"></i> View Repository</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: RRA (NEW) -->
-            <div class="project-card">
-                <div class="project-img">
-                    <!-- Generic tech placeholder -->
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Regulatory Pipeline">
-                </div>
-                <div class="project-content">
-                    <span class="featured-label"><i class="fa-solid fa-star"></i> Featured System Ownership</span>
-                    <h3 class="project-title">End-to-End Regulatory Reporting Pipeline (RRA System)</h3>
-                    <div class="project-summary">An automated pipeline producing accurate, auditable regulatory outputs for COREP and FINREP frameworks feeding into Moody’s.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>System became a reliable, scalable backbone for reporting, significantly reducing manual intervention.</li>
-                        <li>Enabled faster turnaround of reporting cycles and increased confidence in submitted data under audit conditions.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Took ownership of the end-to-end data pipeline layer orchestration and transformation logic using dbt. Engaged stakeholders, mapped business rules, and handled BAU onboarding. Implemented validation controls to guarantee output integrity and resolve complex data issues swiftly.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">dbt (Data Build Tool)</span>
-                        <span class="tag">ETL / ELT</span>
-                        <span class="tag">Moody's RRA</span>
-                        <span class="tag">Data Governance</span>
-                        <span class="tag">Financial Data</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4: Mortgage Portfolio (NEW) -->
-            <div class="project-card">
-                <div class="project-img">
-                    <!-- Generic placeholder -->
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Mortgage Data Integration">
-                </div>
-                <div class="project-content">
-                    <span class="featured-label"><i class="fa-solid fa-star"></i> Featured Execution</span>
-                    <h3 class="project-title">Large-Scale Mortgage Portfolio Integration (Flow & Octane)</h3>
-                    <div class="project-summary">Seamlessly integrated multiple newly acquired large-scale mortgage source systems into the existing reporting architecture.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Successfully delivered the integration in just 6 weeks, beating the historical 3-month organizational delivery benchmark.</li>
-                        <li>Significantly reduced onboarding time for acquisitions, improving organizational responsiveness.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Led the end-to-end integration by analyzing source structures, mapping schemas, and establishing target transformation logic. Authored dbt models to assure dataset consistency with existing compliance outputs. Hardened the pipeline with requisite automated data reconciliation checks.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">dbt</span>
-                        <span class="tag">Data Integration</span>
-                        <span class="tag">Data Mapping</span>
-                        <span class="tag">SQL</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5: Treasury Integration (NEW) -->
-               <div class="project-card">
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80" alt="Treasury Integration">
-                </div>
-                <div class="project-content">
-                    <span class="featured-label"><i class="fa-solid fa-star"></i> Featured Integration</span>
-                    <h3 class="project-title">Treasury System Integration</h3>
-                    <div class="project-summary">Incorporation of a new treasury system directly into internal and regulatory reporting downstream analytics ecosystems.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Eliminated manual processes and provided full visibility of treasury statistics.</li>
-                        <li>Enhanced completeness and verifiable precision of overarching regulatory financial output.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Orchestrated treasury data ingestion, mapping, and transformation routines. Implemented extensive dbt transformation models to align with central architectures constraints, ensuring data flows remained strictly auditable against rigid compliance guidelines.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">dbt</span>
-                        <span class="tag">Data Ingestion</span>
-                        <span class="tag">Validation Layer</span>
-                        <span class="tag">Treasury Metrics</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6: Pipeline Optimisation (NEW) -->
-             <div class="project-card">
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Pipeline Optimisation">
-                </div>
-                <div class="project-content">
-                    <span class="featured-label"><i class="fa-solid fa-star"></i> Performance Engineering</span>
-                    <h3 class="project-title">Data Pipeline Optimisation</h3>
-                    <div class="project-summary">Architectural rebuilds addressing systemic bottlenecks to significantly decrease processing overhead and accelerate delivery.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Slashed GL import times by 67% (1.5 hours down to 30 minutes).</li>
-                        <li>Accelerated entire monthly pipeline runtime from 2.5 hours to 1 hour consistently, vastly reducing operational overhead.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Audited current pipeline orchestration constraints. Overhauled critical SQL queries and refactored underlying dbt transformation logic. Reconfigured general ledger import operations to ensure smooth reporting cadences.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Query Optimization</span>
-                        <span class="tag">Performance Tuning</span>
-                        <span class="tag">Data Engineering</span>
-                        <span class="tag">SQL</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- ADDITIONAL PROJECTS: START -->
-
-            <!-- Project 7: Credit Default Model -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/creditcard.jpg" alt="Credit Risk Prediction">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Credit Card Defaults Application</h3>
-                    <div class="project-summary">A machine learning model designed to assess default likelihood for credit card holders and mitigate financial risk.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Achieved an 82% overall accuracy and 43% recall rate on proactive default identification.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Managed data wrangling and preparation, handled classification imbalances, and built an ensemble architecture utilizing Naive Bayes, Logistic Regression, XGBoost, and SVM with extensive hyperparameter tuning.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">Machine Learning</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/TonpaZoldyck/CreditCardDefualtsProject" target="_blank" class="btn"><i class="fab fa-github"></i> View Repository</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 8: Revenue Dashboard -->
-             <div class="project-card">
-                <div class="project-img">
-                    <img src="images/powerbi.png" alt="Revenue Sampling Dashboard">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Revenue Testing & Sampling Automation</h3>
-                    <div class="project-summary">Overhaul of the receivables and revenue testing process for a prominent UK-based property client.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Reduced manual sampling and testing duration from 8 days to just 2 days.</li>
-                        <li>Implemented targeted sampling logic for high-risk areas, significantly boosting audit precision.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Established a robust, repeatable data model using Power Query. Engineered sophisticated DAX measures to drive an automated dynamic reporting application, centralizing disparate data extraction processes.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Power BI</span>
-                        <span class="tag">DAX</span>
-                        <span class="tag">Power Query</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 9: Retail Dashboard -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/revenue-dashboard.PNG" alt="Retail Analytics Parameters">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Dynamic Parameters Interface for Retail Analytics</h3>
-                    <div class="project-summary">Comprehensive dynamic parameters dashboard distributing real-time revenue and operational insights.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Migrated cumbersome manual extraction functions into an automated intuitive visualization interface.</li>
-                        <li>Accelerated granular decision-making via complex drill-through analysis across stores, regions, and periods.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Developed the visualization framework incorporating complex dynamic parameters using DAX variables. Built responsive drill-through routing to empower operational stakeholders.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Power BI</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Data Visualization</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 10: Flight Analytics -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/Flightdelay.jpg" alt="Flight Analytics">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Domestic Flight Delay Analytics</h3>
-                    <div class="project-summary">Granular analytical review of US domestic flight delay permutations testing temporal and regional capabilities.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Uncovered crucial delay drivers attributing causes to NAS networks, weather events, and specific carriers during peak holiday seasons.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Cleaned datasets executing complex table queries through SQL. Programmed visual dashboards representing distributions across operational phases. Constructed baseline predictive components using Python machine learning capabilities.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Data Analytics</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/TonpaZoldyck/FlightDelaysAnalysis" target="_blank" class="btn"><i class="fab fa-github"></i> View Repository</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 11: Computer Vision -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/what_is_Computer_Vision.jpg.webp" alt="Computer Vision">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">PyTorch Image Recognition Neural Network</h3>
-                    <div class="project-summary">Deep learning computer vision project classifying the Fashion MNIST and legacy MNIST databases.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Trained multi-layer networks capable of accurately classifying 88% of validation imagery.</li>
-                        <li>Optimized data ingestion functions to maintain efficient batch loading velocities.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Led dataset normalizations dictating image resizing parameters. Built, iterated, trained, and monitored various tensor architectures escalating from linear boundaries to full Convolutional Neural Networks (CNNs).</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">CNNs</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/TonpaZoldyck/Computervisionpytorch/blob/main" target="_blank" class="btn"><i class="fab fa-github"></i> View Repository</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 12: Automation Bot -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/chatbotimage.jpg" alt="Automation Web Bot" style="object-position: top;">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Selenium Web Automation Bot</h3>
-                    <div class="project-summary">Object-oriented web utility bot programmed to intercept DOM nodes and execute perpetual processes.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Showcased scalable, modular DOM interaction engineering suitable for headless data scraping deployments.</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Incorporated Selenium WebDriver logic with Python environments manipulating standard browser instances. Transitioned monolithic scripts into robust, encapsulated OOP classes to simulate automated behavior structures.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Selenium</span>
-                        <span class="tag">WebDriver</span>
-                        <span class="tag">OOP</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/TonpaZoldyck/seleniumCookieclickerbot" target="_blank" class="btn"><i class="fab fa-github"></i> View Repository</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 13: Trading Productivity -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="images/Productivity background.jpg" alt="Trading Dashboard">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Azure Trading & Productivity Engineering</h3>
-                    <div class="project-summary">End-to-end data pipeline displacing manual Excel dependency for tracking utilization and global weekly trading metrics.</div>
-                    
-                    <h4 class="project-section-title">Key Impact</h4>
-                    <ul class="bullet-list">
-                        <li>Demolished manual extraction lags, enabling genuine daily dashboard intelligence for partners.</li>
-                        <li>Exponentially improved visibility around critical KPIs—billings, operational capacity, and pipeline work-in-progress (WIP).</li>
-                    </ul>
-
-                    <h4 class="project-section-title">What I Did</h4>
-                    <p>Re-engineered legacy requirements generating a dimensional star-schema output. Formulated Azure Data Factory workflows to ingest unstructured operations logs. Enacted automated validation metrics via Python scripts culminating in a secure semantic Power BI layer.</p>
-
-                    <div class="project-tags">
-                        <span class="tag">Azure Data Factory</span>
-                        <span class="tag">Data Modeling</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Power BI</span>
-                    </div>
-
-                    <div class="project-links">
-                        <span class="btn disabled"><i class="fa-solid fa-lock"></i> Client Confidential</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
-            <ul class="social-links">
-                <li><a href="https://github.com/TonpaZoldyck" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/abdelhamid-ben-brahim-b66560173/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="mailto:abdelhamidbenbrahim45@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-                <li><a href="abdelhamid (DS) CV 5.docx"><i class="fa-solid fa-file-word"></i></a></li>
+            <ul class="nav-links" style="justify-content: center; margin-bottom: 1.5rem;">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <p>&copy; Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
+            <p>&copy; 2026 Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
         </div>
     </footer>
+
+    <script>
+        // Render a featured project card (homepage version — compact)
+        function renderFeaturedCard(p, index) {
+            const isEven = index % 2 === 1; // alternate layout handled by CSS nth-child
+            return `
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="${p.image}" alt="${p.title}" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <span class="featured-label">
+                            <i class="fa-solid ${p.labelIcon}"></i> ${p.label}
+                        </span>
+                        <h3 class="project-title">${p.title}</h3>
+                        <div class="project-summary">${p.summary}</div>
+
+                        <h4 class="project-section-title">Key Impact</h4>
+                        <ul class="bullet-list">
+                            ${p.impact.map(i => `<li>${i}</li>`).join('')}
+                        </ul>
+
+                        <div class="project-tags">
+                            ${p.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+
+                        <div class="project-links">
+                            <a href="projects.html#${p.id}" class="btn">View Details &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderSkills(skills) {
+            return `
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                    <ul class="skill-list">
+                        ${skills.languages.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-database"></i> Data Engineering</h3>
+                    <ul class="skill-list">
+                        ${skills.dataEngineering.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-server"></i> Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        ${skills.toolsPlatforms.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        fetch('content/content.json')
+            .then(r => r.json())
+            .then(data => {
+                // Hero (already static in HTML, could override here)
+                if (data.profile) {
+                    document.getElementById('hero-name').textContent = `Hi, I'm ${data.profile.shortName}.`;
+                    document.getElementById('hero-title').textContent = data.profile.title;
+                    document.getElementById('hero-tagline').textContent = data.profile.tagline;
+                }
+
+                // Featured Projects
+                const featuredEl = document.getElementById('featured-projects-list');
+                if (data.featuredProjects) {
+                    featuredEl.innerHTML = data.featuredProjects
+                        .map((p, i) => renderFeaturedCard(p, i))
+                        .join('');
+                }
+
+                // Skills
+                const skillsEl = document.getElementById('skills-grid');
+                if (data.skills) {
+                    skillsEl.innerHTML = renderSkills(data.skills);
+                }
+            })
+            .catch(err => {
+                console.error('Failed to load content.json:', err);
+                document.getElementById('featured-projects-list').innerHTML =
+                    '<p style="color:var(--text-muted)">Unable to load projects.</p>';
+            });
+    </script>
 
 </body>
 </html>
