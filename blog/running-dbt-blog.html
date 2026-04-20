@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Running dbt at Enterprise Scale Actually Looks Like - Abdelhamid Ben Brahim</title>
+    <meta name="description"
+        content="A technical deep dive into operating dbt in a large-scale regulatory reporting environment with 350+ models, thousands of tests, 12+ source systems, and enterprise-grade data controls.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">AB</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html" class="nav-active">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-overlay" id="nav-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+
+            <div class="post-meta-row">
+                <span class="blog-date">05 April 2026</span>
+
+                <div class="post-tags">
+                    <span class="tag">dbt</span>
+                    <span class="tag">Banking</span>
+                    <span class="tag">Regulatory Reporting</span>
+                    <span class="tag">Data Engineering</span>
+                </div>
+            </div>
+
+            <h1>What Running dbt at Enterprise Scale Actually Looks Like</h1>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section>
+        <div class="container">
+            <article class="post-content">
+
+                <h2>dbt Is Easy to Learn. Scale Is Not.</h2>
+
+                <p>Most conversations around dbt focus on the visible layer: model refs, documentation sites, snapshots,
+                    macros, and cleaner SQL development workflows.</p>
+
+                <p>Those things matter. They are also the easy part.</p>
+
+                <p>The real challenge begins when dbt becomes responsible for business-critical outputs across multiple
+                    systems, under tight controls, with large data volumes and little tolerance for error.</p>
+
+                <p>I worked in an enterprise regulatory reporting environment where dbt was central to transformation
+                    delivery across a highly complex banking data estate.</p>
+
+                <p>The platform involved:</p>
+
+                <ul class="bullet-list">
+                    <li>350+ production dbt models</li>
+                    <li>Thousands of automated tests</li>
+                    <li>12+ upstream source systems</li>
+                    <li>Large-scale customer, account and transaction data</li>
+                    <li>Regulatory outputs requiring accuracy and traceability</li>
+                    <li>Continuous change requests and evolving business logic</li>
+                </ul>
+
+                <p>At that scale, dbt stops being a convenience tool. It becomes infrastructure.</p>
+
+                <h2>The Environment</h2>
+
+                <p>The reporting estate pulled data from multiple internal systems with different ownership models,
+                    structures, refresh timings and data quality standards.</p>
+
+                <p>This included areas such as:</p>
+
+                <ul class="bullet-list">
+                    <li>Customer master data</li>
+                    <li>Product systems</li>
+                    <li>General ledger feeds</li>
+                    <li>Transaction platforms</li>
+                    <li>Risk and reference sources</li>
+                    <li>Static mapping files and manual control inputs</li>
+                </ul>
+
+                <p>The responsibility was not simply to transform data. It was to convert fragmented operational systems
+                    into consistent, governed outputs suitable for regulatory consumption.</p>
+
+                <div class="code-block">
+                    <div class="code-label">Typical Transformation Flow</div>
+                    <pre><code>Raw Sources
+    ↓
+Staging Models
+    ↓
+Standardisation & Cleansing
+    ↓
+Business Logic Layers
+    ↓
+Aggregated Regulatory Models
+    ↓
+Controlled Outputs</code></pre>
+                </div>
+
+                <h2>Model Design Matters More Than Syntax</h2>
+
+                <p>At small scale, poor model structure is inconvenient.</p>
+
+                <p>At enterprise scale, it becomes expensive.</p>
+
+                <p>With hundreds of models, maintainability depends on disciplined layering and clear responsibilities.
+                    A single over-engineered model can create downstream confusion for dozens of consumers.</p>
+
+                <p>The most effective pattern was modular separation:</p>
+
+                <ul class="bullet-list">
+                    <li><strong>Staging:</strong> rename, cast, basic standardisation</li>
+                    <li><strong>Intermediate:</strong> joins, reusable business entities</li>
+                    <li><strong>Core logic:</strong> calculations, classifications, rule application</li>
+                    <li><strong>Marts / outputs:</strong> final reporting structures</li>
+                </ul>
+
+                <p>This reduced duplication, improved readability, and made changes safer to deploy.</p>
+
+                <h2>Testing Is Where Serious Teams Separate Themselves</h2>
+
+                <p>Many teams stop at <code>not_null</code> and <code>unique</code> tests.</p>
+
+                <p>That is a starting point, not an operating model.</p>
+
+                <p>In a controlled reporting environment, testing had to cover far more:</p>
+
+                <ul class="bullet-list">
+                    <li>Primary and composite key uniqueness</li>
+                    <li>Referential integrity between dependent models</li>
+                    <li>Accepted values for regulatory classifications</li>
+                    <li>Freshness checks on upstream feeds</li>
+                    <li>Threshold reconciliation versus prior runs</li>
+                    <li>Balance checks across related measures</li>
+                </ul>
+
+                <div class="code-block">
+                    <div class="code-label">Example Generic Test Pattern</div>
+                    <pre><code>SELECT reporting_entity,
+       SUM(exposure_amount)
+FROM final_output
+GROUP BY reporting_entity
+HAVING SUM(exposure_amount) &lt; 0;</code></pre>
+                </div>
+
+                <p>Tests are not just about broken pipelines. They are about preventing quiet mistakes.</p>
+
+                <h2>Where Python Added Value</h2>
+
+                <p>SQL handled the core transformations, but not every problem belongs in SQL.</p>
+
+                <p>In larger estates, Python became useful for adjacent engineering tasks such as:</p>
+
+                <ul class="bullet-list">
+                    <li>Generating mapping logic from metadata files</li>
+                    <li>Automating repetitive control checks</li>
+                    <li>Pre-processing complex external inputs</li>
+                    <li>Producing comparison packs between runs</li>
+                    <li>Supporting remediation workflows</li>
+                </ul>
+
+                <p>The strongest environments use the right tool, not one tool for everything.</p>
+
+                <h2>Performance Becomes a Financial Question</h2>
+
+                <p>When estates grow to hundreds of models, performance is no longer academic.</p>
+
+                <p>It affects:</p>
+
+                <ul class="bullet-list">
+                    <li>Delivery windows</li>
+                    <li>Developer productivity</li>
+                    <li>Warehouse compute spend</li>
+                    <li>Incident recovery time</li>
+                    <li>Confidence in change releases</li>
+                </ul>
+
+                <p>Practical optimisation often came from fundamentals:</p>
+
+                <ul class="bullet-list">
+                    <li>Choosing the right materialisations</li>
+                    <li>Reducing unnecessary re-computation</li>
+                    <li>Breaking oversized models into logical layers</li>
+                    <li>Improving join selectivity early</li>
+                    <li>Removing dead dependencies</li>
+                </ul>
+
+                <h2>The Human Side of dbt</h2>
+
+                <p>At enterprise scale, the biggest constraint is rarely syntax.</p>
+
+                <p>It is alignment.</p>
+
+                <p>Definitions change. Source teams alter feeds. Regulatory interpretations evolve. Stakeholders want
+                    urgency without trade-offs. Engineers need enough structure to move safely.</p>
+
+                <p>dbt helps because it makes logic visible, versioned and reviewable.</p>
+
+                <p>That transparency matters as much as the SQL itself.</p>
+
+                <h2>What People Often Miss About Regulatory Data</h2>
+
+                <p>In regulated environments, being nearly correct can be equivalent to being wrong.</p>
+
+                <p>Outputs must be explainable, reproducible and reconcilable. If numbers move, there must be a reason.
+                    If logic changes, it must be traceable.</p>
+
+                <p>That standard changes how you engineer data systems.</p>
+
+                <h2>What I Learned</h2>
+
+                <p>dbt is powerful not because it writes SQL faster.</p>
+
+                <p>It is powerful because it introduces software discipline into analytics and reporting environments
+                    that historically lacked it.</p>
+
+                <p>At enterprise scale, that discipline is not optional. It is the difference between a data platform
+                    that grows stronger over time and one that collapses under its own complexity.</p>
+
+                <div class="post-footer">
+                    <a href="../blog.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to
+                        Blog</a>
+                    <a href="../projects.html#regulatory-system" class="btn">View Project Details &rarr;</a>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="nav-links" style="justify-content:center; margin-bottom:1.5rem;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+
+            <p>&copy; 2026 Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+    </script>
+
+</body>
+
+</html>

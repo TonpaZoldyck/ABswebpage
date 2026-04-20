@@ -12,7 +12,6 @@
     },
     "cv": "abdelhamid (DS) CV 5.docx"
   },
-
   "featuredProjects": [
     {
       "id": "pipeline-optimisation",
@@ -31,7 +30,13 @@
         "Refactored SQL transformations and optimised query pushdown performance",
         "Improved orchestration flow to reduce idle time and improve execution efficiency"
       ],
-      "tech": ["Python", "SQL", "DuckDB", "Parquet", "dbt"],
+      "tech": [
+        "Python",
+        "SQL",
+        "DuckDB",
+        "Parquet",
+        "dbt"
+      ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
     },
@@ -53,7 +58,13 @@
         "Implemented robust validation and reconciliation checks",
         "Led BAU changes, system improvements, and incident resolution"
       ],
-      "tech": ["dbt", "SQL", "Python", "AWS", "Prefect"],
+      "tech": [
+        "dbt",
+        "SQL",
+        "Python",
+        "AWS",
+        "Prefect"
+      ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     },
@@ -74,7 +85,11 @@
         "Implemented validation and reconciliation checks to ensure data integrity",
         "Worked closely with stakeholders to align technical outputs with reporting requirements"
       ],
-      "tech": ["SQL", "dbt", "Python"],
+      "tech": [
+        "SQL",
+        "dbt",
+        "Python"
+      ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
     },
@@ -95,12 +110,15 @@
         "Added validation controls and data quality checks to ensure accuracy",
         "Collaborated with treasury and business teams to align on requirements"
       ],
-      "tech": ["SQL", "dbt", "Python"],
+      "tech": [
+        "SQL",
+        "dbt",
+        "Python"
+      ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
     }
   ],
-
   "additionalProjects": [
     {
       "id": "movie-recommendation",
@@ -115,7 +133,13 @@
         "Scaled up to advanced algorithms including Random Forest and PyTorch neural networks",
         "Engineered features from raw datasets following comprehensive exploratory data analysis"
       ],
-      "tech": ["Python", "PyTorch", "Machine Learning", "Random Forest", "Data Pipeline"],
+      "tech": [
+        "Python",
+        "PyTorch",
+        "Machine Learning",
+        "Random Forest",
+        "Data Pipeline"
+      ],
       "github": "https://github.com/TonpaZoldyck/Moviematcher",
       "image": "https://images.unsplash.com/photo-1543536448-d209d2d13a1c?auto=format&fit=crop&w=800&q=80"
     },
@@ -131,7 +155,13 @@
         "Preprocessed text data using Count Vectorization and tokenisation",
         "Engineered a CNN model to automate sentiment classification at scale"
       ],
-      "tech": ["Python", "SQL / BigQuery", "NLP", "Neural Networks", "Looker"],
+      "tech": [
+        "Python",
+        "SQL / BigQuery",
+        "NLP",
+        "Neural Networks",
+        "Looker"
+      ],
       "github": "https://github.com/TonpaZoldyck/moviereviewsNLPmodeling",
       "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80"
     },
@@ -147,7 +177,11 @@
         "Built an ensemble model using Naive Bayes, Logistic Regression, XGBoost, and SVM",
         "Conducted extensive hyperparameter tuning to maximise recall performance"
       ],
-      "tech": ["Python", "XGBoost", "Machine Learning"],
+      "tech": [
+        "Python",
+        "XGBoost",
+        "Machine Learning"
+      ],
       "github": "https://github.com/TonpaZoldyck/CreditCardDefualtsProject",
       "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
     },
@@ -164,7 +198,11 @@
         "Engineered sophisticated DAX measures for dynamic reporting logic",
         "Built an automated dynamic reporting application, centralising disparate data processes"
       ],
-      "tech": ["Power BI", "DAX", "Power Query"],
+      "tech": [
+        "Power BI",
+        "DAX",
+        "Power Query"
+      ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     },
@@ -181,14 +219,22 @@
         "Formulated Azure Data Factory workflows to ingest unstructured operations logs",
         "Enacted automated validation metrics via Python culminating in a Power BI semantic layer"
       ],
-      "tech": ["Azure Data Factory", "Data Modeling", "Python", "Power BI"],
+      "tech": [
+        "Azure Data Factory",
+        "Data Modeling",
+        "Python",
+        "Power BI"
+      ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
     }
   ],
-
   "skills": {
-    "languages": ["Python", "SQL", "Bash"],
+    "languages": [
+      "Python",
+      "SQL",
+      "Bash"
+    ],
     "dataEngineering": [
       "Data Pipelines & ETL/ELT",
       "Data Modelling (Star Schema, dbt)",
@@ -205,7 +251,6 @@
       "Git & Version Control"
     ]
   },
-
   "blogPosts": [
     {
       "id": "pipeline-optimisation",
@@ -213,8 +258,41 @@
       "date": "2026-04-10",
       "dateFormatted": "10 April 2026",
       "summary": "A deep dive into diagnosing and eliminating bottlenecks in a large-scale regulatory data pipeline — replacing Pandas ingestion with direct Parquet-to-DuckDB streaming and applying SQL pushdown optimisation.",
-      "tags": ["Python", "DuckDB", "Parquet", "Performance Engineering"],
+      "tags": [
+        "Python",
+        "DuckDB",
+        "Parquet",
+        "Performance Engineering"
+      ],
       "url": "blog/pipeline-optimisation.html"
+    },
+    {
+      "id": "legacy-system-integration",
+      "title": "How I Integrated a Legacy Acquisition Database into a Modern Analytics Platform",
+      "date": "2026-04-15",
+      "dateFormatted": "15 April 2026",
+      "summary": "A technical deep dive into transforming a fragmented legacy SQL database from an acquired business into a clean star schema powering unified financial and productivity reporting.",
+      "tags": [
+        "SQL",
+        "Azure Data Factory",
+        "Data Warehousing",
+        "Star Schema"
+      ],
+      "url": "blog/legacy-system-integration.html"
+    },
+    {
+      "id": "running-dbt-blog",
+      "title": "What Running dbt at Enterprise Scale Actually Looks Like",
+      "date": "2026-04-05",
+      "dateFormatted": "5 April 2026",
+      "summary": "A technical deep dive into operating dbt in a large-scale regulatory reporting environment with 350+ models, thousands of tests, 12+ source systems, and enterprise-grade data controls.",
+      "tags": [
+        "dbt",
+        "Banking",
+        "Regulatory Reporting",
+        "Data Engineering"
+      ],
+      "url": "blog/running-dbt-blog.html"
     }
   ]
 }

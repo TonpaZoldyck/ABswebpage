@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Integrated a Legacy Acquisition Database into a Modern Analytics Platform - Abdelhamid Ben Brahim
+    </title>
+    <meta name="description"
+        content="A technical deep dive into transforming a fragmented legacy SQL database from an acquired business into a clean star schema powering unified financial and productivity reporting.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">AB</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html" class="nav-active">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-overlay" id="nav-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+
+            <div class="post-meta-row">
+                <span class="blog-date">15 April 2026</span>
+
+                <div class="post-tags">
+                    <span class="tag">SQL</span>
+                    <span class="tag">Azure Data Factory</span>
+                    <span class="tag">Data Warehousing</span>
+                    <span class="tag">Star Schema</span>
+                </div>
+            </div>
+
+            <h1>How I Integrated a Legacy Acquisition Database into a Modern Analytics Platform</h1>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section>
+        <div class="container">
+            <article class="post-content">
+
+                <h2>The Real Problem Was Never the Dashboard</h2>
+
+                <p>When dashboards fail, the visual layer usually gets blamed.</p>
+
+                <p>Executives say the numbers cannot be trusted. Teams say reports are slow. Finance exports data into
+                    spreadsheets. Operations build side trackers. Everyone assumes the issue is Power BI, Tableau, or
+                    the analyst.</p>
+
+                <p>In most cases, the dashboard is only exposing a deeper truth: the underlying data model is broken.
+                </p>
+
+                <p>I saw this first-hand when our business acquired another specialist accountancy firm. More than a
+                    year after acquisition, their operational data still sat outside the main reporting estate. The
+                    company had grown through acquisition, but had no repeatable framework for integrating new entities
+                    into group reporting.</p>
+
+                <p>My task was to change that.</p>
+
+                <p>The source system was a legacy SQL-based accountancy backend containing thousands of tables, layered
+                    views, inconsistent structures, undocumented logic, and no usable analytical model. The requirement
+                    was not to patch a few reports. It was to convert disorder into a production-grade pipeline that
+                    aligned with our existing warehouse architecture.</p>
+
+                <h2>The Objective</h2>
+
+                <p>I led the analytics delivery across the core implementation:</p>
+
+                <ul class="bullet-list">
+                    <li>Source system analysis and table discovery</li>
+                    <li>Azure Data Factory ingestion pipelines</li>
+                    <li>SQL transformation layer design</li>
+                    <li>Star schema modelling</li>
+                    <li>Deployment into production reporting models</li>
+                    <li>Validation with business stakeholders</li>
+                    <li>Dashboard integration into the wider reporting suite</li>
+                </ul>
+
+                <p>The end goal was a clean dimensional model supporting productivity and financial reporting.</p>
+
+                <p>That meant producing trusted entities such as:</p>
+
+                <ul class="bullet-list">
+                    <li>Customers</li>
+                    <li>Employees</li>
+                    <li>Service Lines</li>
+                    <li>Products / Services</li>
+                    <li>Operational Activity Facts</li>
+                    <li>Revenue and Performance Facts</li>
+                </ul>
+
+                <p>Once complete, the acquired business could be reported alongside every other entity in the group
+                    using the same standards, metrics, and executive dashboards.</p>
+
+                <h2>The Architecture</h2>
+
+                <p>The delivery followed a structured warehouse pattern:</p>
+
+                <div class="code-block">
+                    <div class="code-label">End-to-End Flow</div>
+                    <pre><code>Legacy IRIS SQL Backend
+        ↓
+Azure Data Factory Extraction
+        ↓
+Raw / Staging Layer
+        ↓
+SQL Refactoring & Data Standardisation
+        ↓
+Dimensional Star Schema
+        ↓
+Existing Enterprise Models
+        ↓
+Power BI Reporting Layer</code></pre>
+                </div>
+
+                <p>Simple in diagram form. Considerably less simple in reality.</p>
+
+                <h2>Technical Challenge #1 — Joins That Multiplied Revenue</h2>
+
+                <p>One of the most common failures in legacy systems is entity duplication caused by poor relational
+                    discipline.</p>
+
+                <p>Several operational tables stored customer, job, billing, and service relationships differently.
+                    Natural keys were reused inconsistently, and some tables allowed multiple active records where only
+                    one should exist.</p>
+
+                <p>A straightforward join produced inflated metrics immediately.</p>
+
+                <div class="code-block">
+                    <div class="code-label">Naive Join (Incorrect)</div>
+                    <pre><code>SELECT c.customer_name,
+       SUM(i.invoice_value)
+FROM invoices i
+JOIN customers c
+  ON i.customer_ref = c.customer_ref
+GROUP BY c.customer_name;</code></pre>
+                </div>
+
+                <p>This looked valid. It was not.</p>
+
+                <p>Because duplicate customer records existed in the source, invoice rows were being multiplied during
+                    joins. Revenue totals became overstated — exactly the kind of silent failure that destroys trust in
+                    reporting.</p>
+
+                <p>The fix required controlled deduplication using ranking logic and survivorship rules.</p>
+
+                <div class="code-block">
+                    <div class="code-label">Resolved Using Window Functions</div>
+                    <pre><code>WITH ranked_customers AS (
+    SELECT *,
+           ROW_NUMBER() OVER (
+               PARTITION BY customer_ref
+               ORDER BY last_updated DESC
+           ) AS rn
+    FROM customers_raw
+)
+
+SELECT i.invoice_value,
+       c.customer_name
+FROM invoices i
+JOIN ranked_customers c
+  ON i.customer_ref = c.customer_ref
+WHERE c.rn = 1;</code></pre>
+                </div>
+
+                <p>This established one trusted customer row per business key before facts entered the warehouse model.
+                </p>
+
+                <h2>Technical Challenge #2 — Inconsistent IDs Across Modules</h2>
+
+                <p>Another issue was fragmented identity.</p>
+
+                <p>The same customer could appear under different references across billing, CRM, time tracking, and
+                    historical migrated tables. Names varied slightly, codes changed over time, and some records had no
+                    enforced relationship at all.</p>
+
+                <p>Without solving identity, there is no reliable star schema.</p>
+
+                <p>I introduced conformed surrogate keys in the warehouse and mapped multiple legacy identifiers back to
+                    a single analytical entity.</p>
+
+                <div class="code-block">
+                    <div class="code-label">Customer Key Mapping Logic</div>
+                    <pre><code>customer_dim
+------------
+customer_key
+legacy_id
+billing_id
+crm_id
+customer_name_standardised</code></pre>
+                </div>
+
+                <p>This allowed facts from multiple source modules to land against one customer dimension, preserving
+                    history while enabling consistent reporting.</p>
+
+                <h2>Technical Challenge #3 — Views Built on Views Built on Views</h2>
+
+                <p>Legacy systems often accumulate logic through convenience rather than design. In this case, many
+                    reporting views referenced other views, which referenced more views. Performance degraded,
+                    definitions conflicted, and nobody was certain where certain calculations originated.</p>
+
+                <p>Instead of inheriting that complexity, I decomposed the logic into explicit transformation layers:
+                </p>
+
+                <ul class="bullet-list">
+                    <li>Raw extraction tables</li>
+                    <li>Cleaned staging tables</li>
+                    <li>Business-rule transformations</li>
+                    <li>Dimensional outputs</li>
+                </ul>
+
+                <p>That made lineage visible, testing practical, and future changes far safer.</p>
+
+                <h2>The Result</h2>
+
+                <p>After approximately 3–5 months of phased delivery, the acquired business was fully integrated into
+                    the enterprise reporting platform.</p>
+
+                <div class="result-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Before</th>
+                                <th>After</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standalone legacy system</td>
+                                <td>Integrated group reporting entity</td>
+                            </tr>
+                            <tr>
+                                <td>Manual reconciliation</td>
+                                <td>Automated scheduled pipelines</td>
+                            </tr>
+                            <tr>
+                                <td>Untrusted joins and fragmented IDs</td>
+                                <td>Conformed dimensional model</td>
+                            </tr>
+                            <tr>
+                                <td>No acquisition roadmap</td>
+                                <td>Reusable integration blueprint</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>More importantly, this represented roughly 5% of group operations becoming visible through the same
+                    executive lens as the rest of the company.</p>
+
+                <h2>What Leaders Should Understand</h2>
+
+                <p>Most reporting problems are not reporting problems.</p>
+
+                <p>They are modelling problems, ownership problems, and systems integration problems.</p>
+
+                <p>A polished dashboard on top of unmanaged source data is decoration. A trusted dashboard built on
+                    disciplined modelling becomes infrastructure.</p>
+
+                <p>The difference matters.</p>
+
+                <h2>What I Learned</h2>
+
+                <p>Technical work becomes valuable when it solves organisational friction.</p>
+
+                <p>In this case, the real deliverable was not a dataset or dashboard. It was operational coherence after
+                    acquisition — turning an isolated legacy business into part of a measurable, manageable group.</p>
+
+                <p>That is where data engineering creates leverage.</p>
+
+                <div class="post-footer">
+                    <a href="../blog.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to
+                        Blog</a>
+                    <a href="../projects.html#trading-productivity" class="btn">View Project Details &rarr;</a>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="nav-links" style="justify-content:center; margin-bottom:1.5rem;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+
+            <p>&copy; 2026 Abdelhamid Ben Brahim. Data Engineer / Analytics Engineer.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+    </script>
+
+</body>
+
+</html>
