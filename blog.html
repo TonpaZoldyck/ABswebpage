@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Abdelhamid Ben Brahim | Data Engineer</title>
     <meta name="description" content="Technical writing on data engineering, pipeline performance, and analytics engineering from Abdelhamid Ben Brahim.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog — Abdelhamid Ben Brahim | Data Engineer">
+    <meta property="og:description" content="Technical writing on data engineering, pipeline performance, and analytics engineering from Abdelhamid Ben Brahim.">
+    <meta property="og:url" content="https://tonpazoldyck.github.io/ABswebpage/blog.html">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +61,18 @@
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to see the work behind the writing?</h2>
+            <p style="font-size: 1.1rem;">Explore the projects that produced these insights, or get in touch directly.</p>
+            <div class="cta-buttons">
+                <a href="projects.html" class="btn">View Projects &rarr;</a>
+                <a href="contact.html" class="btn btn-outline">Get in Touch &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -100,10 +117,9 @@
                         <span class="blog-date">${post.dateFormatted}</span>
                         <h2 class="blog-title"><a href="${post.url}">${post.title}</a></h2>
                         <p class="blog-summary">${post.summary}</p>
-                        <div class="project-tags" style="margin-top:0.5rem; margin-bottom:1rem;">
+                        <div class="post-tags">
                             ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
                         </div>
-                        <a href="${post.url}" class="btn">Read Post &rarr;</a>
                     </article>
                 `).join('');
             })

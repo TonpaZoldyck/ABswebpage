@@ -1151,6 +1151,14 @@ footer .nav-links a::after {
 }
 
 /* ─────────────────────────────────────────
+   ADDITIONAL PROJECTS SECTION
+───────────────────────────────────────── */
+.additional-projects-section {
+  padding: 5rem 0;
+  background-color: var(--bg-main);
+}
+
+/* ─────────────────────────────────────────
    BLOG PREVIEW (HOMEPAGE)
 ───────────────────────────────────────── */
 .blog-preview-section {

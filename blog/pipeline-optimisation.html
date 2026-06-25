@@ -7,6 +7,11 @@
     <title>How I Reduced a Data Pipeline Runtime by Over 60%</title>
     <meta name="description"
         content="A deep dive into diagnosing and eliminating bottlenecks in a large-scale regulatory data pipeline — replacing Pandas ingestion with direct Parquet-to-DuckDB streaming.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How I Reduced a Data Pipeline Runtime by Over 60%">
+    <meta property="og:description" content="A deep dive into diagnosing and eliminating bottlenecks in a large-scale regulatory data pipeline — replacing Pandas ingestion with direct Parquet-to-DuckDB streaming.">
+    <meta property="og:url" content="https://tonpazoldyck.github.io/ABswebpage/blog/pipeline-optimisation.html">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -167,8 +172,8 @@ result = con.execute("""
                             <tr>
                                 <td>GL Processing</td>
                                 <td>~1.5 hours</td>
-                                <td>~30 minutes</td>
-                                <td><strong>67% faster</strong></td>
+                                <td>~40 minutes</td>
+                                <td><strong>~55% faster</strong></td>
                             </tr>
                             <tr>
                                 <td>Total Pipeline</td>
