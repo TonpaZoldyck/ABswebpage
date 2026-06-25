@@ -3,8 +3,8 @@
     "name": "Abdelhamid Ben Brahim",
     "shortName": "Abdel",
     "title": "Data Engineer | Analytics Engineering | Financial Services",
-    "tagline": "I build scalable data pipelines and regulatory reporting systems that deliver reliable, high-impact insights.",
-    "about": "I am a Data / Analytics Engineer specialising in robust, auditable data pipelines for the financial services sector. I take full ownership of complex orchestration and regulatory reporting systems — accelerating data delivery while ensuring total compliance and data integrity.",
+    "tagline": "ACA-qualified data engineer building auditable pipelines, regulatory reporting systems, and production AI agents in financial services.",
+    "about": "I'm an ACA-qualified Data / Analytics Engineer specialising in robust, auditable data pipelines for the financial services sector. I take full ownership of complex orchestration and regulatory reporting systems — from dbt models and orchestration through to production AI agents and ML — accelerating data delivery while ensuring total compliance and data integrity.",
     "socials": {
       "github": "https://github.com/TonpaZoldyck",
       "linkedin": "https://www.linkedin.com/in/abdelhamid-ben-brahim/",
@@ -20,8 +20,9 @@
       "title": "Data Pipeline Optimisation & Performance Engineering",
       "summary": "Optimised a large-scale regulatory data pipeline, significantly reducing processing time and improving reporting delivery across monthly cycles.",
       "impact": [
-        "Reduced GL processing time from ~1.5 hours → 30 minutes (67% improvement)",
+        "Reduced GL processing time from ~1.5 hours → 40 minutes (~55% improvement)",
         "Reduced total pipeline runtime from ~2.5 hours → ~1 hour (~60% improvement)",
+        "Optimised a single critical query from ~40 minutes to under 1 minute",
         "Enabled faster and more reliable regulatory reporting cycles"
       ],
       "whatIDid": [
@@ -45,24 +46,25 @@
       "label": "System Ownership",
       "labelIcon": "fa-shield-halved",
       "title": "End-to-End Regulatory Reporting Pipeline (COREP/FINREP)",
-      "summary": "Owned and maintained a critical regulatory reporting pipeline generating outputs for COREP/FINREP frameworks submitted to regulators.",
+      "summary": "Sole engineer responsible for a ~350-model regulatory reporting platform generating COREP, FINREP, and Basel III/IV inputs for regulatory submission.",
       "impact": [
         "Enabled automated, auditable reporting outputs for regulatory submission",
-        "Reduced manual intervention and improved data reliability across reporting cycles",
-        "Supported audit processes with improved traceability and controls"
+        "Reduced full BAU monthly reporting cycle from 4+ weeks to completing by the 15th of each month",
+        "Served as primary technical lead during a regulatory audit that concluded with only 2 high-risk findings across 20 total",
+        "Reduced manual intervention and improved data reliability across reporting cycles"
       ],
       "whatIDid": [
-        "Managed full pipeline ownership — orchestration, transformation, and delivery",
-        "Built and maintained dbt models implementing COREP/FINREP reporting logic",
-        "Integrated multiple upstream data sources into a single reporting layer",
-        "Implemented robust validation and reconciliation checks",
-        "Led BAU changes, system improvements, and incident resolution"
+        "Owned the full pipeline end-to-end — orchestration (Prefect), transformation (dbt), ingestion (Python), and production deployments",
+        "Led system walkthroughs, data lineage investigations, and field-level definitions during regulatory audit",
+        "Led post-audit remediation: introduced Jira for change tracking, formalised Git commit standards, migrated production from DuckDB to SQL Server for full audit trail compliance",
+        "Migrated 100+ dbt test cases off slow-running SQL Server models into reusable Jinja macros, improving performance and maintainability",
+        "Built a CI gate into the dbt workflow that auto-compiles and runs core tests on every change, blocking commits that break a model or core rule"
       ],
       "tech": [
         "dbt",
         "SQL",
         "Python",
-        "AWS",
+        "SQL Server",
         "Prefect"
       ],
       "status": "confidential",
@@ -73,10 +75,10 @@
       "label": "Rapid Integration",
       "labelIcon": "fa-code-merge",
       "title": "Large-Scale Mortgage Portfolio Integration",
-      "summary": "Integrated newly acquired mortgage portfolios into the regulatory reporting pipeline under significantly accelerated timelines.",
+      "summary": "Integrated newly acquired mortgage and loans portfolios into the regulatory reporting pipeline under significantly accelerated timelines.",
       "impact": [
-        "Delivered full integration in ~6 weeks against a ~3-month standard timeline",
-        "Enabled immediate inclusion of new portfolios in regulatory reporting cycles",
+        "Delivered Pepper and Motor Novo Finance mortgage portfolio integrations end-to-end in ~3 months combined, against a standard timeline of 3+ months per integration",
+        "Led the Transact (loans product) integration end-to-end in ~1 month",
         "Established a reusable integration pattern improving scalability for future onboarding"
       ],
       "whatIDid": [
@@ -97,12 +99,12 @@
       "id": "treasury-integration",
       "label": "Data Completeness",
       "labelIcon": "fa-vault",
-      "title": "Treasury System Integration",
-      "summary": "Integrated treasury data into the central regulatory reporting pipeline to enhance financial reporting completeness and accuracy.",
+      "title": "Treasury System Integration (Murex)",
+      "summary": "Supported and led the regulatory reporting-side deployment of Murex, a new treasury system, as the highest-risk project to the business at the time.",
       "impact": [
+        "Delivered within the first 3 months of joining — the highest-risk project critical to company delivery",
         "Improved coverage and completeness of financial reporting outputs",
-        "Reduced manual adjustments and reconciliation effort across reporting cycles",
-        "Ensured data consistency across regulatory and management reporting systems"
+        "Reduced manual adjustments and reconciliation effort across reporting cycles"
       ],
       "whatIDid": [
         "Designed new data models to accommodate treasury data structures",
@@ -117,9 +119,84 @@
       ],
       "status": "confidential",
       "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "ai-agent-engineering",
+      "label": "AI Agent Engineering",
+      "labelIcon": "fa-robot",
+      "title": "AI Agent Engineering for Regulatory Reporting",
+      "summary": "Designed and shipped production AI agents — both business-facing and developer-facing — tailored to a 350-model regulatory reporting platform.",
+      "impact": [
+        "Enabled business stakeholders to self-serve answers to common regulatory reporting questions",
+        "Accelerated day-to-day engineering work across the team via developer-facing agents/skills",
+        "Owned the AI tooling rollout end-to-end, including training and onboarding less AI-tool-experienced colleagues",
+        "Uses Codex daily for refactoring, code investigation, and architecture/design reviews"
+      ],
+      "whatIDid": [
+        "Designed and built custom AI agents (OpenAI Codex-based) tailored to the platform's data model",
+        "Grounded agents via vector search / RAG over the platform's data to ensure accurate, contextual answers",
+        "Tested agents over a sustained period before rolling out to business stakeholders",
+        "Deployed developer-facing agents/skills across the codebase to automate repetitive engineering tasks",
+        "Mentored peers and senior stakeholders weekly on agentic/AI developments"
+      ],
+      "tech": [
+        "OpenAI Codex",
+        "RAG / Vector Search",
+        "Python"
+      ],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "ml-anomaly-detection",
+      "label": "Production ML",
+      "labelIcon": "fa-magnifying-glass-chart",
+      "title": "Production ML Anomaly Detection Layer",
+      "summary": "Self-initiated a Python-based anomaly detection layer on top of existing rule-based validation to catch data-quality issues earlier and reduce regulatory submission risk.",
+      "impact": [
+        "Automated a large portion of reconciliation work the business team previously did manually",
+        "Caught data-quality issues earlier in the pipeline than rule-based validation alone",
+        "Reduced regulatory submission risk through earlier detection of outliers and unexpected changes"
+      ],
+      "whatIDid": [
+        "Identified the opportunity and built the layer proactively, driven by an ML background, not as an assigned task",
+        "Trialled and compared multiple model approaches — SVMs, multiple regression, and Hugging Face models",
+        "Flagged outliers, large errors, and unexpected changes versus prior snapshots",
+        "Integrated the layer alongside pre-existing rule-based validation in the production pipeline"
+      ],
+      "tech": [
+        "Python",
+        "Scikit-learn",
+        "Hugging Face"
+      ],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     }
   ],
   "additionalProjects": [
+    {
+      "id": "emotion-quote-recommender",
+      "title": "Emotion & Quote Recommendation Engine",
+      "summary": "An end-to-end NLP project using Hugging Face models to read and evaluate large bodies of text (e.g. Harry Potter) and surface a matching quote based on a user's mood or favourite stories.",
+      "impact": [
+        "Built a full text-evaluation pipeline matching quotes to user mood across large bodies of source text",
+        "Originally hosted on AWS (S3 + SageMaker); now runs locally due to text-licensing constraints"
+      ],
+      "whatIDid": [
+        "Designed an NLP pipeline using Hugging Face models to read and evaluate large text corpora",
+        "Built matching logic to surface quotes aligned to user mood and favourite stories",
+        "Deployed initially on AWS S3 + SageMaker, then migrated to local-only hosting"
+      ],
+      "tech": [
+        "Python",
+        "Hugging Face",
+        "NLP",
+        "AWS S3",
+        "SageMaker"
+      ],
+      "status": "confidential",
+      "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+    },
     {
       "id": "movie-recommendation",
       "title": "Movie Recommendation System",
@@ -244,11 +321,18 @@
     ],
     "toolsPlatforms": [
       "dbt (Data Build Tool)",
-      "AWS (S3, Glue, Lambda)",
+      "AWS",
       "Azure Data Factory",
       "Prefect / Orchestration",
       "Power BI & DAX",
       "Git & Version Control"
+    ],
+    "aiAgentEngineering": [
+      "OpenAI Codex (agent building, daily use)",
+      "RAG / Vector Search",
+      "Hugging Face",
+      "GitHub Copilot",
+      "Anomaly Detection (SVM, Regression)"
     ]
   },
   "blogPosts": [

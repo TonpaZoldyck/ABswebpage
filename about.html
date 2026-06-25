@@ -60,13 +60,14 @@
 
                 <div class="about-card">
                     <h2 class="section-title">Who I Am</h2>
-                    <p>I'm a Data / Analytics Engineer specialising in building robust, auditable data pipelines for the
-                        financial services sector. I take full ownership of complex systems — from orchestration and
-                        transformation through to regulatory submission — ensuring data is reliable, traceable, and
-                        delivered on time.</p>
-                    <p>My work spans end-to-end regulatory reporting (COREP/FINREP), pipeline performance engineering,
-                        and data integration for large-scale acquisitions. I'm comfortable working at every layer of the
-                        stack, from raw SQL to orchestrated Python pipelines to dbt model architecture.</p>
+                    <p>I'm an ACA-qualified data engineer with a First Class degree from UCL and 5+ years across Big 4
+                        consulting and financial services. I take full ownership of complex production systems — from
+                        orchestration and transformation through to regulatory submission — combining deep technical
+                        execution with strong business and stakeholder understanding.</p>
+                    <p>My work spans end-to-end regulatory reporting (COREP/FINREP/Basel III/IV), pipeline performance
+                        engineering, and data integration for large-scale acquisitions. I've also designed and shipped
+                        production AI agents (Codex-based, RAG-grounded) and a self-initiated ML anomaly detection layer
+                        — extending the same ownership model into AI tooling and machine learning, not just pipelines.</p>
                 </div>
 
                 <div class="about-card">
@@ -75,58 +76,79 @@
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-meta">
-                                <span class="timeline-date">2025 — Present</span>
+                                <span class="timeline-date">May 2024 — Present</span>
                                 <span class="timeline-badge">Aldermore Bank - UK</span>
                             </div>
-                            <h3 class="timeline-title">Data Engineer / Analytics Engineer</h3>
+                            <h3 class="timeline-title">Data Specialist (Data Engineer)</h3>
                             <p class="timeline-company">Financial Services — UK</p>
                             <ul class="bullet-list">
-                                <li>Owned end-to-end regulatory reporting data pipelines supporting COREP and FINREP
-                                    submissions, ensuring accuracy, auditability, and regulatory compliance</li>
-                                <li>Redesigned and optimised large-scale data workflows, achieving 60%+ reduction in
-                                    pipeline runtime through performance tuning and architecture improvements</li>
-                                <li>Delivered enterprise-grade data integrations across mortgage and treasury domains,
-                                    consolidating disparate data sources into governed analytics datasets</li>
-                                <li>Built and maintained modular dbt transformation layers, orchestrated workflows using
-                                    Prefect, and managed AWS-based data infrastructure to support scalable analytics
-                                    delivery</li>
+                                <li>Sole engineer responsible for the RRA system — a ~350-model regulatory reporting
+                                    automation platform generating all COREP, FINREP, and Basel III/IV inputs; owns the
+                                    full stack from orchestration (Prefect) and transformation (dbt) to production
+                                    deployments</li>
+                                <li>Delivered Pepper and Motor Novo Finance mortgage portfolio integrations end-to-end
+                                    in ~3 months combined, against a standard timeline of 3+ months per integration,
+                                    and led the Transact (loans product) integration end-to-end in ~1 month</li>
+                                <li>Supported and led the regulatory reporting-side deployment of Murex (new treasury
+                                    system) within the first 3 months — the highest-risk project at the time</li>
+                                <li>Reduced the full BAU monthly reporting cycle from 4+ weeks to completing by the
+                                    15th of each month; optimised GL import runtime from 1.5 hours to 40 minutes and a
+                                    single critical query from ~40 minutes to under 1 minute</li>
+                                <li>Served as primary technical lead during a regulatory audit — system walkthroughs,
+                                    data lineage investigations, field-level definitions — concluding with only 2
+                                    high-risk findings across 20 total; led post-audit remediation (Jira, formalised
+                                    Git commit standards, DuckDB → SQL Server migration for audit trail compliance)</li>
+                                <li>Designed and built custom AI agents (OpenAI Codex, RAG-grounded over RRA's data
+                                    model) enabling business stakeholders to self-serve regulatory reporting questions,
+                                    plus developer-facing agents/skills to accelerate engineering work — owns the AI
+                                    tooling rollout end-to-end, including training colleagues</li>
+                                <li>Self-initiated a Python-based ML anomaly detection layer (SVM, regression, Hugging
+                                    Face) on top of rule-based validation to catch data-quality issues earlier and
+                                    automate reconciliation work the business team previously did manually</li>
+                                <li>Migrated 100+ dbt test cases into reusable Jinja macros and built a CI gate that
+                                    auto-compiles and runs core tests on every change, blocking broken commits</li>
+                                <li>Mentors peers, other engineers, and senior stakeholders on RRA and on agentic/AI
+                                    developments on a weekly cadence, plus ad hoc support for the dev team</li>
                             </ul>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-meta">
-                                <span class="timeline-date">2024 — 2025</span>
+                                <span class="timeline-date">Feb 2024 — May 2024</span>
                             </div>
                             <h3 class="timeline-title">Data Analyst</h3>
                             <p class="timeline-company">Gravita — UK</p>
                             <ul class="bullet-list">
-                                <li>Designed and implemented scalable end-to-end analytics solutions, unifying multiple data
-                                    sources into structured data models for reporting and analysis</li>
-                                <li>Developed and optimised Azure Data Factory pipelines to automate data ingestion,
-                                    transformation, and integration across cloud-based systems</li>
-                                <li>Built robust Power BI semantic models using star schema design and advanced DAX
-                                    calculations to deliver high-performance reporting layers</li>
-                                <li>Led end-to-end delivery of analytics solutions across client engagements, independently
-                                    managing requirements gathering, development, and stakeholder presentation of insights
-                                </li>
+                                <li>Sole analyst and data engineer for a PE-backed accountancy firm; built the firm's
+                                    finance data mart and unified data model from scratch across CCH, Dynamics 365, and
+                                    Business Central via Azure Data Factory and dbt</li>
+                                <li>Migrated the legacy IRIS database (non-relational, inconsistent) into a clean
+                                    relational data mart, enabling reporting that was previously impossible</li>
+                                <li>Built an ARIMA-based revenue forecasting model achieving 87% accuracy</li>
+                                <li>Built the Power BI semantic model ground-up — relationships, DAX measures,
+                                    calculation logic — replacing manual Excel reporting with live dashboards</li>
+                                <li>Designed and implemented GitHub Copilot integration across the Power BI/Fabric
+                                    reporting layer and the dbt/codebase to improve data models and documentation</li>
+                                <li>Mentored a junior business dashboard analyst on data modelling and BI query design
+                                    through regular catch-ups</li>
                             </ul>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-meta">
-                                <span class="timeline-date">2020 — 2023</span>
+                                <span class="timeline-date">Sep 2020 — Nov 2023</span>
                             </div>
-                            <h3 class="timeline-title">Assistant Manager</h3>
+                            <h3 class="timeline-title">Assistant Manager, Analytics</h3>
                             <p class="timeline-company">Deloitte — UK</p>
                             <ul class="bullet-list">
-                                <li>Led audit engagements for financial services clients with a strong focus on audit
-                                    analytics and data-driven risk assessment</li>
-                                <li>Applied advanced data analytics techniques to identify anomalies, trends, and financial
-                                    reporting risks</li>
-                                <li>Built and delivered end-to-end financial analysis solutions, improving audit efficiency
-                                    and insight quality across multiple client engagements</li>
-                                <li>Collaborated with clients to translate complex financial data into actionable insights
-                                    and executive-level reporting</li>
+                                <li>Managed full audit and assurance engagements end-to-end and led analytics teams of
+                                    5-6 junior analysts per engagement, covering technical development and
+                                    personal/professional growth</li>
+                                <li>Automated fund valuation testing using Python — reduced tasks that previously took
+                                    days or weeks to hours or minutes, recognised by partners</li>
+                                <li>Built VBA scripts to automate repetitive Excel workflows across the audit team</li>
+                                <li>Delivered journal entry testing and full analytics-driven audit procedures for
+                                    high-risk clients, plus Power BI dashboards for client portfolio analysis</li>
                             </ul>
                         </div>
                     </div>
@@ -149,7 +171,7 @@
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-meta">
-                                <span class="timeline-date">2020 — 2023</span>
+                                <span class="timeline-date">Qualified 2023</span>
                             </div>
                             <h3 class="timeline-title">ACA Qualified Accountant</h3>
                             <p class="timeline-company">ICAEW</p>
@@ -187,9 +209,7 @@
                     <h3><i class="fa-solid fa-server"></i> Tools & Platforms</h3>
                     <div class="tag-group">
                         <span class="tag">dbt</span>
-                        <span class="tag">AWS S3</span>
-                        <span class="tag">AWS Glue</span>
-                        <span class="tag">Lambda</span>
+                        <span class="tag">AWS</span>
                         <span class="tag">Azure Data Factory</span>
                         <span class="tag">Prefect</span>
                         <span class="tag">Power BI</span>
@@ -198,7 +218,17 @@
                     </div>
                 </div>
 
-
+                <!-- AI / Agent Engineering Card -->
+                <div class="sidebar-card">
+                    <h3><i class="fa-solid fa-robot"></i> AI / Agent Engineering</h3>
+                    <div class="tag-group">
+                        <span class="tag">OpenAI Codex</span>
+                        <span class="tag">RAG / Vector Search</span>
+                        <span class="tag">Hugging Face</span>
+                        <span class="tag">GitHub Copilot</span>
+                        <span class="tag">Anomaly Detection</span>
+                    </div>
+                </div>
 
             </aside>
 
