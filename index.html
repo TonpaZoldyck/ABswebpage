@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdelhamid Ben Brahim - Data Engineer / Analytics Engineer</title>
-    <meta name="description" content="Data Engineer specialising in scalable data pipelines and regulatory reporting systems in financial services. UK-based.">
+    <meta name="description" content="ACA-qualified Data Engineer specialising in regulatory reporting pipelines, production AI agents, and analytics engineering in financial services. London, UK.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
     <section class="hero">
         <div class="container">
             <h1 id="hero-name">Hi, I'm Abdel.</h1>
-            <h2 id="hero-title">Data Engineer | Analytics Engineering | Financial Services</h2>
+            <h2 id="hero-title">Data Engineer | Analytics Engineer | Financial Services</h2>
             <div class="hero-statement" id="hero-tagline">
                 ACA-qualified data engineer building auditable pipelines, regulatory reporting systems, and production AI agents in financial services.
             </div>
@@ -51,6 +51,7 @@
                 <a href="#featured-projects" class="btn">View Projects</a>
                 <a href="blog.html" class="btn btn-outline">Read the Blog</a>
             </div>
+            <div class="hero-socials" id="hero-socials"></div>
         </div>
     </section>
 
@@ -58,7 +59,7 @@
     <section id="about" class="about-short-section">
         <div class="container">
             <div class="about-content" id="about-short">
-                <p>I'm an ACA-qualified data engineer specialising in robust, auditable data pipelines for the financial services sector — taking full ownership of regulatory reporting systems from orchestration through to delivery, and extending that ownership into production AI agents and ML. My focus is on reliable data, strong controls, and measurable impact.</p>
+                <p>Five years across Big 4 consulting and financial services — currently sole engineer on a 350-model COREP/FINREP/Basel III reporting platform at a UK bank, orchestrated with Prefect and transformed with dbt. I've extended that ownership into production AI agents (Codex-based, RAG-grounded) and a self-initiated ML anomaly detection layer. ACA qualified, First Class from UCL.</p>
                 <div class="cta-buttons" style="justify-content: flex-start; margin-top: 1rem;">
                     <a href="about.html" class="btn btn-outline">Full Experience &rarr;</a>
                 </div>
@@ -89,14 +90,28 @@
         </div>
     </section>
 
+    <!-- Blog Preview Section -->
+    <section class="blog-preview-section">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">From the Blog</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Technical deep dives on data engineering, pipelines, and financial services.</p>
+            <div class="blog-preview-grid" id="blog-preview-grid">
+                <div class="loading-placeholder">Loading posts&hellip;</div>
+            </div>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="blog.html" class="btn btn-outline">All Posts &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Looking for more detail?</h2>
-            <p style="font-size: 1.1rem;">Dive deep into my technical projects or read my latest thoughts on data engineering.</p>
+            <h2>Interested in working together?</h2>
+            <p style="font-size: 1.1rem;">Open to senior data engineering and analytics engineering roles in financial services.</p>
             <div class="cta-buttons">
-                <a href="projects.html" class="btn">View All Projects &rarr;</a>
-                <a href="blog.html" class="btn btn-outline">Read the Blog &rarr;</a>
+                <a href="contact.html" class="btn">Get in Touch &rarr;</a>
+                <a href="projects.html" class="btn btn-outline">View All Projects &rarr;</a>
             </div>
         </div>
     </section>
@@ -133,7 +148,6 @@
 
         // Render a featured project card (homepage version — compact)
         function renderFeaturedCard(p, index) {
-            const isEven = index % 2 === 1; // alternate layout handled by CSS nth-child
             return `
                 <div class="project-card">
                     <div class="project-img">
@@ -192,14 +206,44 @@
             `;
         }
 
+        function renderBlogPreview(post) {
+            return `
+                <a href="${post.url}" class="blog-preview-card">
+                    <span class="blog-date">${post.dateFormatted}</span>
+                    <h3 class="blog-preview-title">${post.title}</h3>
+                    <p class="blog-preview-summary">${post.summary}</p>
+                    <div class="post-tags">
+                        ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                    </div>
+                </a>
+            `;
+        }
+
         fetch('content/content.json')
             .then(r => r.json())
             .then(data => {
-                // Hero (already static in HTML, could override here)
+                // Hero
                 if (data.profile) {
                     document.getElementById('hero-name').textContent = `Hi, I'm ${data.profile.shortName}.`;
                     document.getElementById('hero-title').textContent = data.profile.title;
                     document.getElementById('hero-tagline').textContent = data.profile.tagline;
+
+                    // Social links in hero
+                    const socialsEl = document.getElementById('hero-socials');
+                    if (data.profile.socials && socialsEl) {
+                        const { github, linkedin, email } = data.profile.socials;
+                        socialsEl.innerHTML = `
+                            <a href="${github}" target="_blank" rel="noopener" class="hero-social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="${linkedin}" target="_blank" rel="noopener" class="hero-social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="${email}" class="hero-social-link" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        `;
+                    }
                 }
 
                 // Featured Projects
@@ -214,6 +258,12 @@
                 const skillsEl = document.getElementById('skills-grid');
                 if (data.skills) {
                     skillsEl.innerHTML = renderSkills(data.skills);
+                }
+
+                // Blog previews
+                const blogEl = document.getElementById('blog-preview-grid');
+                if (data.blogPosts && blogEl) {
+                    blogEl.innerHTML = data.blogPosts.map(renderBlogPreview).join('');
                 }
             })
             .catch(err => {

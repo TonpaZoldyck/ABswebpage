@@ -2,7 +2,7 @@
   "profile": {
     "name": "Abdelhamid Ben Brahim",
     "shortName": "Abdel",
-    "title": "Data Engineer | Analytics Engineering | Financial Services",
+    "title": "Data Engineer | Analytics Engineer | Financial Services",
     "tagline": "ACA-qualified data engineer building auditable pipelines, regulatory reporting systems, and production AI agents in financial services.",
     "about": "I'm an ACA-qualified Data / Analytics Engineer specialising in robust, auditable data pipelines for the financial services sector. I take full ownership of complex orchestration and regulatory reporting systems — from dbt models and orchestration through to production AI agents and ML — accelerating data delivery while ensuring total compliance and data integrity.",
     "socials": {
@@ -71,56 +71,6 @@
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     },
     {
-      "id": "mortgage-integration",
-      "label": "Rapid Integration",
-      "labelIcon": "fa-code-merge",
-      "title": "Large-Scale Mortgage Portfolio Integration",
-      "summary": "Integrated newly acquired mortgage and loans portfolios into the regulatory reporting pipeline under significantly accelerated timelines.",
-      "impact": [
-        "Delivered Pepper and Motor Novo Finance mortgage portfolio integrations end-to-end in ~3 months combined, against a standard timeline of 3+ months per integration",
-        "Led the Transact (loans product) integration end-to-end in ~1 month",
-        "Established a reusable integration pattern improving scalability for future onboarding"
-      ],
-      "whatIDid": [
-        "Led end-to-end data mapping and transformation design for new portfolio data",
-        "Built dbt models to integrate and normalise new datasets into reporting layer",
-        "Implemented validation and reconciliation checks to ensure data integrity",
-        "Worked closely with stakeholders to align technical outputs with reporting requirements"
-      ],
-      "tech": [
-        "SQL",
-        "dbt",
-        "Python"
-      ],
-      "status": "confidential",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "id": "treasury-integration",
-      "label": "Data Completeness",
-      "labelIcon": "fa-vault",
-      "title": "Treasury System Integration (Murex)",
-      "summary": "Supported and led the regulatory reporting-side deployment of Murex, a new treasury system, as the highest-risk project to the business at the time.",
-      "impact": [
-        "Delivered within the first 3 months of joining — the highest-risk project critical to company delivery",
-        "Improved coverage and completeness of financial reporting outputs",
-        "Reduced manual adjustments and reconciliation effort across reporting cycles"
-      ],
-      "whatIDid": [
-        "Designed new data models to accommodate treasury data structures",
-        "Implemented transformation logic in dbt to integrate treasury into reporting layer",
-        "Added validation controls and data quality checks to ensure accuracy",
-        "Collaborated with treasury and business teams to align on requirements"
-      ],
-      "tech": [
-        "SQL",
-        "dbt",
-        "Python"
-      ],
-      "status": "confidential",
-      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
-    },
-    {
       "id": "ai-agent-engineering",
       "label": "AI Agent Engineering",
       "labelIcon": "fa-robot",
@@ -170,7 +120,7 @@
         "Hugging Face"
       ],
       "status": "confidential",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
     }
   ],
   "additionalProjects": [
@@ -281,7 +231,7 @@
         "Power Query"
       ],
       "status": "confidential",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "trading-productivity",
